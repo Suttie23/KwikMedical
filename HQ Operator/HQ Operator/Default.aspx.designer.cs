@@ -15,84 +15,102 @@ namespace HQ_Operator
     {
 
         /// <summary>
-        /// FirstName control.
+        /// HQLookup control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FirstName;
+        protected global::System.Web.UI.WebControls.TextBox HQLookup;
 
         /// <summary>
-        /// LastName control.
+        /// HQLookupButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LastName;
+        protected global::System.Web.UI.WebControls.Button HQLookupButton;
 
         /// <summary>
-        /// NHSReg control.
+        /// HQFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NHSReg;
+        protected global::System.Web.UI.WebControls.TextBox HQFirstName;
 
         /// <summary>
-        /// Address control.
+        /// HQLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Address;
+        protected global::System.Web.UI.WebControls.TextBox HQLastName;
 
         /// <summary>
-        /// InciLocation control.
+        /// HQNHSReg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList InciLocation;
+        protected global::System.Web.UI.WebControls.TextBox HQNHSReg;
 
         /// <summary>
-        /// DateOfBirth control.
+        /// HQAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DateOfBirth;
+        protected global::System.Web.UI.WebControls.TextBox HQAddress;
 
         /// <summary>
-        /// SubmitPatientInformation control.
+        /// HQLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubmitPatientInformation;
+        protected global::System.Web.UI.WebControls.DropDownList HQLocation;
 
         /// <summary>
-        /// ClearForm control.
+        /// HQDateOfBirth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ClearForm;
+        protected global::System.Web.UI.WebControls.TextBox HQDateOfBirth;
 
         /// <summary>
-        /// SubmitAmbulanceRequest control.
+        /// HQSubmitPatientInformation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubmitAmbulanceRequest;
+        protected global::System.Web.UI.WebControls.Button HQSubmitPatientInformation;
+
+        /// <summary>
+        /// HQClearForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button HQClearForm;
+
+        /// <summary>
+        /// HQSubmitAmbulanceRequest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button HQSubmitAmbulanceRequest;
     }
 }
