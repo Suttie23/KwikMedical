@@ -1,0 +1,74 @@
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Ambulance Rescue.dll.config
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Ambulance Rescue.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Ambulance Rescue.pdb
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\csc.exe
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\csc.exe.config
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\csc.rsp
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\csi.exe
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\csi.exe.config
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\csi.rsp
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.AppContext.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Console.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.IO.Compression.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Net.Http.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.ValueTuple.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\vbc.exe
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\vbc.exe.config
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\vbc.rsp
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\VBCSCompiler.exe
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Antlr3.Runtime.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Newtonsoft.Json.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\System.Web.Optimization.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\WebGrease.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\System.Web.Optimization.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Newtonsoft.Json.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Antlr3.Runtime.pdb
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\obj\Debug\Ambulance Rescue.csproj.AssemblyReference.cache
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\obj\Debug\Ambulance Rescue.csproj.CoreCompileInputs.cache
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\obj\Debug\Ambulance Rescue.csproj.CopyComplete
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\obj\Debug\Ambulance Rescue.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\Ambulance Rescue\obj\Debug\Ambulance Rescue.pdb
