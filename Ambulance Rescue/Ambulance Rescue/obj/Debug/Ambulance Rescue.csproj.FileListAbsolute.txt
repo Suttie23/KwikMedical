@@ -1,4 +1,3 @@
-C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambulance Rescue\bin\Ambulance Rescue.dll.config
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambulance Rescue\bin\Ambulance Rescue.dll
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambulance Rescue\bin\Ambulance Rescue.pdb
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambulance Rescue\bin\roslyn\csc.exe

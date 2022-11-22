@@ -6,14 +6,9 @@
 
     <div class="wrapper rounded bg-white">
 
-        <div class="h3">Ambulance Patient Lookup</div>
+        <div class="h3">Ambulance Patient Lookup (Incident Number)</div>
         <div class="form">
                 <div class="row">
-                    <div class="row">
-                        <div class="col-md-12 mt-md-0 mt-3">
-                            <label>Lookup Incident (Incident Number)</label>
-                        </div>
-                    </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <asp:TextBox class="form-control" ID="Lookup" runat="server"></asp:TextBox>
                     </div>

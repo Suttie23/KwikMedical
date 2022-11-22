@@ -158,7 +158,6 @@ C:\Users\Sutti\Desktop\KwikMedical\HQ Operator\HQ Operator\obj\Debug\HQ Operator
 C:\Users\Sutti\Desktop\KwikMedical\HQ Operator\HQ Operator\obj\Debug\HQ Operator.csproj.CopyComplete
 C:\Users\Sutti\Desktop\KwikMedical\HQ Operator\HQ Operator\obj\Debug\HQ Operator.dll
 C:\Users\Sutti\Desktop\KwikMedical\HQ Operator\HQ Operator\obj\Debug\HQ Operator.pdb
-C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\HQ Operator.dll.config
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\HQ Operator.dll
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\HQ Operator.pdb
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\roslyn\csc.exe

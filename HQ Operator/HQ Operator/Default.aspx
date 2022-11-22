@@ -5,7 +5,7 @@
 
     <div class="wrapper rounded bg-white">
         <div class="form">
-            <div class="h3">Lookup Patient</div>
+            <div class="h3">Lookup Patient (NHS Registration Number)</div>
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <asp:TextBox class="form-control" ID="HQLookup" runat="server"></asp:TextBox>
