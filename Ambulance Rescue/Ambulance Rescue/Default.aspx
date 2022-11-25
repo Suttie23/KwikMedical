@@ -17,41 +17,41 @@
                    </div>
                 </div>
             <hr/>
-            <div class="h4">Information From Hospital</div>
+            <div class="h3">Information From Hospital</div>
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>First Name</label>
-                        <asp:TextBox class="form-control" ID="InciFirstName" runat="server"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="InciFirstName" ReadOnly="true" runat="server"></asp:TextBox>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Last Name</label>
-                        <asp:TextBox class="form-control" ID="InciLastName" runat="server"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="InciLastName" ReadOnly="true" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>NHS Registration Number</label>
-                        <asp:TextBox class="form-control" ID="InciNHSReg" runat="server"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="InciNHSReg" ReadOnly="true" runat="server"></asp:TextBox>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Address</label>
-                        <asp:TextBox class="form-control" ID="InciAddress" runat="server"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="InciAddress" ReadOnly="true" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Current Location</label>
-                        <asp:TextBox class="form-control" ID="InciLocation" runat="server"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="InciLocation" ReadOnly="true" runat="server"></asp:TextBox>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Date Of Birth</label>
-                        <asp:TextBox class="form-control" ID="InciDateOfBirth" runat="server"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="InciDateOfBirth" ReadOnly="true" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row"> 
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Medical Condition</label>
-                        <textarea id="InciMedicalCondition" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
+                        <textarea id="InciMedicalCondition"  style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
                     </div>
                 </div>
                 <hr/>
@@ -63,7 +63,7 @@
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Action Taken</label>
-                        <textarea id="AmbActionTaken" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
+                        <textarea readonly id="AmbActionTaken" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
                     </div>
                 </div>
                 <div class="row">
