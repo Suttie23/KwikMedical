@@ -237,3 +237,4 @@ C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\obj\Debug\HQ Operator.csproj.CopyComplete
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\obj\Debug\HQ Operator.dll
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\obj\Debug\HQ Operator.pdb
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\HQ Operator.dll.config

@@ -61,14 +61,11 @@
                 </div>
                 <hr/>
                 <div class="row">
-                    <div class="col-md-4 mt-md-0 mt-3 text-center">
+                    <div class="col-md-6 mt-md-0 mt-3 text-center">
                         <asp:Button class="btn btn-danger mt-3 align-middle" ID="HQSubmitPatientInformation" runat="server" Text="Submit Patient Information" />
                     </div>
-                    <div class="col-md-4 mt-md-0 mt-3 text-center">
-                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="HQClearForm" runat="server" Text="Clear Form" />
-                    </div>
-                    <div class="col-md-4 mt-md-0 mt-3 text-center">
-                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="HQSubmitAmbulanceRequest" runat="server" Text="Request Ambulance" />
+                    <div class="col-md-6 mt-md-0 mt-3 text-center">
+                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="HQClearForm" runat="server" Text="Clear all Form Inputs" />
                     </div>
                 </div>
              </div>

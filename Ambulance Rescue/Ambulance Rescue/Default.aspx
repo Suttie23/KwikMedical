@@ -63,7 +63,7 @@
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Action Taken</label>
-                        <textarea readonly id="AmbActionTaken" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
+                        <textarea id="AmbActionTaken" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
                     </div>
                 </div>
                 <div class="row">

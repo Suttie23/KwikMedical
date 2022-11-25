@@ -71,3 +71,4 @@ C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambula
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambulance Rescue\obj\Debug\Ambulance Rescue.csproj.CopyComplete
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambulance Rescue\obj\Debug\Ambulance Rescue.dll
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambulance Rescue\obj\Debug\Ambulance Rescue.pdb
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambulance Rescue\bin\Ambulance Rescue.dll.config
