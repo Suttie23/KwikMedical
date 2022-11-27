@@ -237,4 +237,25 @@ C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\obj\Debug\HQ Operator.csproj.CopyComplete
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\obj\Debug\HQ Operator.dll
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\obj\Debug\HQ Operator.pdb
-C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\HQ Operator.dll.config
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\BouncyCastle.Crypto.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\Google.Protobuf.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\K4os.Compression.LZ4.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\K4os.Compression.LZ4.Streams.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\K4os.Hash.xxHash.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\MySql.Data.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\System.Buffers.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\System.Memory.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\System.Numerics.Vectors.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\ZstdNet.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\BouncyCastle.Crypto.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\Google.Protobuf.pdb
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\Google.Protobuf.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\K4os.Compression.LZ4.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\K4os.Compression.LZ4.Streams.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\K4os.Hash.xxHash.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\MySql.Data.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\System.Buffers.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\System.Memory.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\System.Numerics.Vectors.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\System.Runtime.CompilerServices.Unsafe.xml
