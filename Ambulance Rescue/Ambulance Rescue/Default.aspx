@@ -13,7 +13,7 @@
                         <asp:TextBox class="form-control" ID="Lookup" runat="server"></asp:TextBox>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
-                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="InciLookupIncident" runat="server" Text="Lookup Incident" />
+                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="InciLookupIncident" runat="server" Text="Lookup Incident" OnClick="InciLookupIncident_Click" />
                    </div>
                 </div>
             <hr/>
@@ -34,8 +34,8 @@
                         <asp:TextBox class="form-control" ID="InciNHSReg" ReadOnly="true" runat="server"></asp:TextBox>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Address</label>
-                        <asp:TextBox class="form-control" ID="InciAddress" ReadOnly="true" runat="server"></asp:TextBox>
+                        <label>Incident Number</label>
+                        <asp:TextBox class="form-control" ID="InciNumber" ReadOnly="true" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row">
@@ -51,7 +51,11 @@
                 <div class="row"> 
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Medical Condition</label>
-                        <textarea id="InciMedicalCondition"  style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
+                        <textarea id="InciMedicalCondition" runat="server" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Address</label>
+                        <asp:TextBox class="form-control" ID="InciAddress" ReadOnly="true" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <hr/>
@@ -59,11 +63,11 @@
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Ambulance Diagnosis</label>
-                        <textarea id="AmbDiagnosis" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
+                        <textarea id="AmbDiagnosis" runat="server" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Action Taken</label>
-                        <textarea id="AmbActionTaken" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
+                        <textarea id="AmbAction" runat="server" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -75,11 +79,12 @@
                 <hr/>
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3 text-center" style="margin-bottom: 10px;">
-                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="AmbUpdateHospital" runat="server" Text="Update Hospital" />
+                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="AmbUpdateHospital" runat="server" Text="Update Hospital" OnClick="AmbUpdateHospital_Click" Height="37px" Width="172px" />
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3 text-center">
                         <asp:Button class="btn btn-danger mt-3 align-middle" ID="AmbClearForm" runat="server" Text="Clear Full Form" />
                     </div>
+                    <asp:Label ID="SubmitStatus" runat="server" Text=""></asp:Label>
                 </div>
         </div>
     </div>

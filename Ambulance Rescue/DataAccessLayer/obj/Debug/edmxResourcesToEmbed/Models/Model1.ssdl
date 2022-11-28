@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KwikMedicalDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Hospital">
+    <Key>
+      <PropertyRef Name="hospital_id" />
+    </Key>
+    <Property Name="hospital_id" Type="int" Nullable="false" />
+    <Property Name="hospital_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="hospital_region" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Incidents">
+    <Key>
+      <PropertyRef Name="incident_number" />
+    </Key>
+    <Property Name="incident_number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="incident_action_taken" Type="nvarchar" MaxLength="255" />
+    <Property Name="incident_diagnosis" Type="nvarchar" MaxLength="255" />
+    <Property Name="incident_callout_time" Type="nvarchar" MaxLength="255" />
+    <Property Name="patient_nhs_registration" Type="int" />
+    <Property Name="assigned_hospital" Type="int" />
+  </EntityType>
+  <EntityType Name="Patients">
+    <Key>
+      <PropertyRef Name="patient_nhs_registration" />
+    </Key>
+    <Property Name="patient_nhs_registration" Type="int" Nullable="false" />
+    <Property Name="patient_firstname" Type="nvarchar" MaxLength="25" />
+    <Property Name="patient_secondname" Type="nvarchar" MaxLength="25" />
+    <Property Name="patient_address" Type="nvarchar" MaxLength="100" />
+    <Property Name="patient_current_location" Type="nvarchar" MaxLength="100" />
+    <Property Name="patient_medical_condition" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Incidents_Hospital1">
+    <End Role="Hospital" Type="Self.Hospital" Multiplicity="0..1" />
+    <End Role="Incidents" Type="Self.Incidents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospital">
+        <PropertyRef Name="hospital_id" />
+      </Principal>
+      <Dependent Role="Incidents">
+        <PropertyRef Name="assigned_hospital" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Incidents_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+    <End Role="Incidents" Type="Self.Incidents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="patient_nhs_registration" />
+      </Principal>
+      <Dependent Role="Incidents">
+        <PropertyRef Name="patient_nhs_registration" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KwikMedicalDatabaseModelStoreContainer">
+    <EntitySet Name="Hospital" EntityType="Self.Hospital" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Incidents" EntityType="Self.Incidents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Incidents_Hospital1" Association="Self.FK_Incidents_Hospital1">
+      <End Role="Hospital" EntitySet="Hospital" />
+      <End Role="Incidents" EntitySet="Incidents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Incidents_Patients" Association="Self.FK_Incidents_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Incidents" EntitySet="Incidents" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

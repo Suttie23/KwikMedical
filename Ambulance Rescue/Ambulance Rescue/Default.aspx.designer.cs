@@ -60,13 +60,13 @@ namespace Ambulance_Rescue
         protected global::System.Web.UI.WebControls.TextBox InciNHSReg;
 
         /// <summary>
-        /// InciAddress control.
+        /// InciNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox InciAddress;
+        protected global::System.Web.UI.WebControls.TextBox InciNumber;
 
         /// <summary>
         /// InciLocation control.
@@ -85,6 +85,42 @@ namespace Ambulance_Rescue
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox InciAssignedHospital;
+
+        /// <summary>
+        /// InciMedicalCondition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea InciMedicalCondition;
+
+        /// <summary>
+        /// InciAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InciAddress;
+
+        /// <summary>
+        /// AmbDiagnosis control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea AmbDiagnosis;
+
+        /// <summary>
+        /// AmbAction control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea AmbAction;
 
         /// <summary>
         /// AmbCalloutLength control.
@@ -112,5 +148,14 @@ namespace Ambulance_Rescue
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AmbClearForm;
+
+        /// <summary>
+        /// SubmitStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SubmitStatus;
     }
 }
