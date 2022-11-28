@@ -14,32 +14,14 @@ namespace HQ_Operator
     public partial class _Default : Page
     {
 
-        PatientLogic logic = new PatientLogic();
+        PatientLogic patLogic = new PatientLogic();
+        IncidentLogic inciLogic = new IncidentLogic();
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if(!IsPostBack)
-            {
-                BindingCategoryData();
-            }
-
         }
 
-        private void BindingCategoryData()
-        {
-            try
-            {
-                var listPatient = logic.PatientList();
-                GridViewListPatient.DataSource = listPatient;
-                GridViewListPatient.DataBind();
-            }
-            catch(Exception)
-            {
-                throw;
-            }
-
-        }
 
         // Submit Patient information
         protected void HQSubmitPatientInformation_Click(object sender, EventArgs e)
@@ -47,7 +29,7 @@ namespace HQ_Operator
 
             if (IsValid)
             {
-                Insert();
+                InsertPat();
             }
 
         }
@@ -63,20 +45,20 @@ namespace HQ_Operator
 
         }
 
-        private void Insert()
+        private void InsertPat()
         {
             try
             {
                 var patient = new DataAccessLayer.Models.Patient();
                 {
-                    patient.patient_nhs_registration = HQNHSReg.Text;
+                    patient.patient_nhs_registration = int.Parse(HQNHSReg.Text);
                     patient.patient_firstname = HQFirstName.Text;
                     patient.patient_secondname = HQLastName.Text;
                     patient.patient_address = HQAddress.Text;
                     patient.patient_current_location = HQLocation.Text;
                     patient.patient_medical_condition = HQMedicalCondition.InnerText;
                 }
-                logic.CreatePatient(patient);
+                patLogic.CreatePatient(patient);
 
                 SubmitStatus.Text = "Patient Sucessfully Created";
             }
@@ -89,29 +71,74 @@ namespace HQ_Operator
 
         private void FindPatient()
         {
-            try
-            {
 
-                string id = HQLookup.Text;
+                int id = 0;
+                id = int.Parse(HQLookup.Text);
 
-                var foundpatient = logic.GetPatientById(id);
+                try
+                {
 
-                    HQFirstName.Text = foundpatient.patient_firstname;
-                    HQLastName.Text = foundpatient.patient_secondname;
-                    HQNHSReg.Text = foundpatient.patient_nhs_registration.ToString();
-                    HQAddress.Text = foundpatient.patient_address;
-                    HQLocation.Text = foundpatient.patient_current_location;
-                    HQMedicalCondition.InnerText = foundpatient.patient_medical_condition;
+                    HQFirstName.Text = patLogic.GetPatientById(id).patient_firstname;
+                    HQLastName.Text = patLogic.GetPatientById(id).patient_secondname;
+                    HQNHSReg.Text = patLogic.GetPatientById(id).patient_nhs_registration.ToString();
+                    HQAddress.Text = patLogic.GetPatientById(id).patient_address;
+                    HQLocation.Text = patLogic.GetPatientById(id).patient_current_location;
+                    HQMedicalCondition.InnerText = patLogic.GetPatientById(id).patient_medical_condition;
 
                     FindStatus.Text = "Patient Found";
 
-            }
-            catch (NullReferenceException e)
+                }
+                catch (Exception)
+                {
+                    FindStatus.Text = "Patient not Found";
+                    throw;
+                }
+
+
+        }
+
+        protected void HQClearForm_Click(object sender, EventArgs e)
+        {
+            HQLookup.Text = "";
+            HQFirstName.Text = ""; ;
+            HQLastName.Text = "";
+            HQNHSReg.Text = "";
+            HQAddress.Text = "";
+            HQLocation.Text = "Not Specified";
+            HQMedicalCondition.InnerText = "";
+            SubmitStatus.Text = "";
+
+        }
+
+        protected void HQRequestAmbulance_Click(object sender, EventArgs e)
+        {
+
+            if (IsValid)
             {
-                FindStatus.Text = "Patient not Found";
+                InsertInci();
             }
 
         }
 
+        private void InsertInci()
+        {
+
+            try
+            {
+                var incident = new DataAccessLayer.Models.Incident();
+                {
+                    incident.patient_nhs_registration = int.Parse(HQNHSReg.Text);
+                    incident.assigned_hospital = 10;
+                }
+                inciLogic.CreateIncident(incident);
+
+                SubmitStatus.Text = "Incident Report Sent to Ambulance";
+            }
+            catch (Exception ex)
+            {
+                SubmitStatus.Text = ex.Message;
+            }
+
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace DataAccessLayer.Models
             this.Incidents = new HashSet<Incident>();
         }
     
-        public short hospital_id { get; set; }
+        public int hospital_id { get; set; }
         public string hospital_name { get; set; }
         public string hospital_region { get; set; }
     

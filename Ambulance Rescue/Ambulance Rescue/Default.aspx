@@ -44,8 +44,8 @@
                         <asp:TextBox class="form-control" ID="InciLocation" ReadOnly="true" runat="server"></asp:TextBox>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Date Of Birth</label>
-                        <asp:TextBox class="form-control" ID="InciDateOfBirth" ReadOnly="true" runat="server"></asp:TextBox>
+                        <label>Assigned Hospital</label>
+                        <asp:TextBox class="form-control" ID="InciAssignedHospital" ReadOnly="true" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row"> 

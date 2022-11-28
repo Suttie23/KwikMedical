@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="hospital_id" />
           </Key>
-          <Property Name="hospital_id" Type="smallint" Nullable="false" />
+          <Property Name="hospital_id" Type="int" Nullable="false" />
           <Property Name="hospital_name" Type="nvarchar" MaxLength="100" />
           <Property Name="hospital_region" Type="nvarchar" MaxLength="100" />
         </EntityType>
@@ -17,18 +17,18 @@
           <Key>
             <PropertyRef Name="incident_number" />
           </Key>
-          <Property Name="incident_number" Type="smallint" Nullable="false" />
+          <Property Name="incident_number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="incident_action_taken" Type="nvarchar" MaxLength="255" />
           <Property Name="incident_diagnosis" Type="nvarchar" MaxLength="255" />
           <Property Name="incident_callout_time" Type="nvarchar" MaxLength="255" />
-          <Property Name="patient_nhs_registration" Type="nvarchar" MaxLength="5" />
-          <Property Name="assigned_hospital" Type="smallint" />
+          <Property Name="patient_nhs_registration" Type="int" />
+          <Property Name="assigned_hospital" Type="int" />
         </EntityType>
         <EntityType Name="Patients">
           <Key>
             <PropertyRef Name="patient_nhs_registration" />
           </Key>
-          <Property Name="patient_nhs_registration" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="patient_nhs_registration" Type="int" Nullable="false" />
           <Property Name="patient_firstname" Type="nvarchar" MaxLength="25" />
           <Property Name="patient_secondname" Type="nvarchar" MaxLength="25" />
           <Property Name="patient_address" Type="nvarchar" MaxLength="100" />
@@ -45,7 +45,7 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <Association Name="FK_Incidents_Hospital">
+        <Association Name="FK_Incidents_Hospital1">
           <End Role="Hospital" Type="Self.Hospital" Multiplicity="0..1" />
           <End Role="Incidents" Type="Self.Incidents" Multiplicity="*" />
           <ReferentialConstraint>
@@ -74,7 +74,7 @@
           <EntitySet Name="Incidents" EntityType="Self.Incidents" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Incidents_Hospital" Association="Self.FK_Incidents_Hospital">
+          <AssociationSet Name="FK_Incidents_Hospital1" Association="Self.FK_Incidents_Hospital1">
             <End Role="Hospital" EntitySet="Hospital" />
             <End Role="Incidents" EntitySet="Incidents" />
           </AssociationSet>
@@ -92,29 +92,29 @@
           <Key>
             <PropertyRef Name="hospital_id" />
           </Key>
-          <Property Name="hospital_id" Type="Int16" Nullable="false" />
+          <Property Name="hospital_id" Type="Int32" Nullable="false" />
           <Property Name="hospital_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="hospital_region" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Incidents" Relationship="Self.FK_Incidents_Hospital" FromRole="Hospital" ToRole="Incidents" />
+          <NavigationProperty Name="Incidents" Relationship="Self.FK_Incidents_Hospital1" FromRole="Hospital" ToRole="Incidents" />
         </EntityType>
         <EntityType Name="Incident">
           <Key>
             <PropertyRef Name="incident_number" />
           </Key>
-          <Property Name="incident_number" Type="Int16" Nullable="false" />
+          <Property Name="incident_number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="incident_action_taken" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="incident_diagnosis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="incident_callout_time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="patient_nhs_registration" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
-          <Property Name="assigned_hospital" Type="Int16" />
-          <NavigationProperty Name="Hospital" Relationship="Self.FK_Incidents_Hospital" FromRole="Incidents" ToRole="Hospital" />
+          <Property Name="patient_nhs_registration" Type="Int32" />
+          <Property Name="assigned_hospital" Type="Int32" />
+          <NavigationProperty Name="Hospital" Relationship="Self.FK_Incidents_Hospital1" FromRole="Incidents" ToRole="Hospital" />
           <NavigationProperty Name="Patient" Relationship="Self.FK_Incidents_Patients" FromRole="Incidents" ToRole="Patients" />
         </EntityType>
         <EntityType Name="Patient">
           <Key>
             <PropertyRef Name="patient_nhs_registration" />
           </Key>
-          <Property Name="patient_nhs_registration" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="patient_nhs_registration" Type="Int32" Nullable="false" />
           <Property Name="patient_firstname" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="patient_secondname" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="patient_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -132,7 +132,7 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK_Incidents_Hospital">
+        <Association Name="FK_Incidents_Hospital1">
           <End Role="Hospital" Type="Self.Hospital" Multiplicity="0..1" />
           <End Role="Incidents" Type="Self.Incident" Multiplicity="*" />
           <ReferentialConstraint>
@@ -161,7 +161,7 @@
           <EntitySet Name="Incidents" EntityType="Self.Incident" />
           <EntitySet Name="Patients" EntityType="Self.Patient" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <AssociationSet Name="FK_Incidents_Hospital" Association="Self.FK_Incidents_Hospital">
+          <AssociationSet Name="FK_Incidents_Hospital1" Association="Self.FK_Incidents_Hospital1">
             <End Role="Hospital" EntitySet="Hospitals" />
             <End Role="Incidents" EntitySet="Incidents" />
           </AssociationSet>

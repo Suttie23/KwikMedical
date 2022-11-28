@@ -24,7 +24,7 @@ namespace BusinessLogic
             dal.CreatePatient(patient);
         }
 
-        public Patient GetPatientById(string id)
+        public Patient GetPatientById(int? id)
         {
 
             Patient patient = dal.GetPatientById(id);

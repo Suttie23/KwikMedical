@@ -53,7 +53,22 @@
                         <label>Medical Condition</label>
                         <textarea id="HQMedicalCondition" runat="server" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
                     </div>
-                </div>                
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label runat="server" ID="HospitalLabel" Visible="false">Assign Hospital</label>
+                        <asp:DropDownList class="form-control" Visible="false" ID="HospitalList" runat="server">
+                            <asp:ListItem Enabled="true" Text= "Select Location" Value= "Not Specified"></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text= "City of Edinburgh" Value= "City of Edinburgh"></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text= "East Lothian" Value= "East Lothian"></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text= "West Lothian" Value= "West Lothian"></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text= "Midlothian" Value= "Midlothian"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+            
+                    </div>
+                </div> 
                 <hr/>
                 <div class="row">
                     <div class="col-md-4 mt-md-0 mt-3 text-center">
@@ -61,25 +76,10 @@
                         <asp:Label ID="SubmitStatus" runat="server" Text=""></asp:Label>
                     </div>
                     <div class="col-md-4 mt-md-0 mt-3 text-center">
-                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="HQClearForm" runat="server" Text="Clear all Form Inputs" />
+                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="HQClearForm" runat="server" Text="Clear all Form Inputs" OnClick="HQClearForm_Click" />
                     </div>
                     <div class="col-md-4 mt-md-0 mt-3 text-center">
-                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="HQRequestAmbulance" runat="server" Text="Request Ambulance" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 mt-md-0 mt-3 text-center">
-                        <asp:GridView ID="GridViewListPatient" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" Width="726px" AutoGenerateColumns="False">
-                            <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-                            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-                            <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
-                            <RowStyle BackColor="White" ForeColor="#330099" />
-                            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-                            <SortedAscendingCellStyle BackColor="#FEFCEB" />
-                            <SortedAscendingHeaderStyle BackColor="#AF0101" />
-                            <SortedDescendingCellStyle BackColor="#F6F0C0" />
-                            <SortedDescendingHeaderStyle BackColor="#7E0000" />
-                        </asp:GridView>
+                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="HQRequestAmbulance" runat="server" Text="Request Ambulance" OnClick="HQRequestAmbulance_Click" />
                     </div>
                 </div>
              </div>

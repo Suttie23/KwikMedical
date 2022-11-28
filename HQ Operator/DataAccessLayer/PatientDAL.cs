@@ -24,7 +24,7 @@ namespace DataAccessLayer
             db.SaveChanges();
         }
 
-        public Patient GetPatientById(string id)
+        public Patient GetPatientById(int? id)
         {
 
             Patient patient = db.Patients.Find(id);

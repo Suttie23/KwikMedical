@@ -14,12 +14,12 @@ namespace DataAccessLayer.Models
     
     public partial class Incident
     {
-        public short incident_number { get; set; }
+        public int incident_number { get; set; }
         public string incident_action_taken { get; set; }
         public string incident_diagnosis { get; set; }
         public string incident_callout_time { get; set; }
-        public string patient_nhs_registration { get; set; }
-        public Nullable<short> assigned_hospital { get; set; }
+        public Nullable<int> patient_nhs_registration { get; set; }
+        public Nullable<int> assigned_hospital { get; set; }
     
         public virtual Hospital Hospital { get; set; }
         public virtual Patient Patient { get; set; }

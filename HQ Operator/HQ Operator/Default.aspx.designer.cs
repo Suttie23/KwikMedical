@@ -96,6 +96,24 @@ namespace HQ_Operator
         protected global::System.Web.UI.HtmlControls.HtmlTextArea HQMedicalCondition;
 
         /// <summary>
+        /// HospitalLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl HospitalLabel;
+
+        /// <summary>
+        /// HospitalList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList HospitalList;
+
+        /// <summary>
         /// HQSubmitPatientInformation control.
         /// </summary>
         /// <remarks>
@@ -130,14 +148,5 @@ namespace HQ_Operator
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button HQRequestAmbulance;
-
-        /// <summary>
-        /// GridViewListPatient control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewListPatient;
     }
 }
