@@ -259,3 +259,12 @@ C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\System.Memory.xml
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\System.Numerics.Vectors.xml
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\BusinessLogic.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\DataAccessLayer.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\BusinessLogic.pdb
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\DataAccessLayer.pdb
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\EntityFramework.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\DataAccessLayer.dll.config
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\EntityFramework.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\EntityFramework.SqlServer.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\EntityFramework.SqlServer.xml

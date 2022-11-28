@@ -7,18 +7,37 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BusinessLogic;
 
 namespace HQ_Operator
 {
     public partial class _Default : Page
     {
 
-        string connectionString = @"server=127.0.0.1;port=3306;database=KwikMedicalDatabase;userid=root;password=1234;";
-        MySqlConnection con = null;
-        MySqlDataReader reader = null;
+        PatientLogic logic = new PatientLogic();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if(!IsPostBack)
+            {
+                BindingCategoryData();
+            }
+
+        }
+
+        private void BindingCategoryData()
+        {
+            try
+            {
+                var listPatient = logic.PatientList();
+                GridViewListPatient.DataSource = listPatient;
+                GridViewListPatient.DataBind();
+            }
+            catch(Exception)
+            {
+                throw;
+            }
 
         }
 
@@ -26,52 +45,73 @@ namespace HQ_Operator
         protected void HQSubmitPatientInformation_Click(object sender, EventArgs e)
         {
 
-            con = new MySqlConnection(connectionString);
-            con.Open();
-            MySqlCommand command = con.CreateCommand();
-            command.Parameters.AddWithValue("@patient_firstname", HQFirstName.Text);
-            command.Parameters.AddWithValue("@patient_secondname", HQLastName.Text);
-            command.Parameters.AddWithValue("@patient_nhs_registration", HQNHSReg.Text);
-            command.Parameters.AddWithValue("@patient_address", HQAddress.Text);
-            command.Parameters.AddWithValue("@patient_current_location", HQLocation.Text);
-            command.Parameters.AddWithValue("@patient_medical_condition", HQMedicalCondition.InnerText);
+            if (IsValid)
+            {
+                Insert();
+            }
 
-            command.CommandText = "INSERT INTO Patients (patient_firstname, patient_secondname, patient_nhs_registration, patient_address, patient_current_location, patient_medical_condition)" +
-                "VALUES (@patient_firstname, @patient_secondname, @patient_nhs_registration, @patient_address, @patient_current_location, @patient_medical_condition)";
-            if (command.ExecuteNonQuery() > 0)
-                SubmitStatus.Text = "Submitted Successfully";
-            else
-                SubmitStatus.Text = "Failed to Submit Patient";
-            con.Close();
         }
 
         // Lookup Patient by ID
         protected void HQLookupButton_Click(object sender, EventArgs e)
         {
-            con = new MySqlConnection(connectionString);
-            con.Open();
-            string cmdText = "SELECT * FROM Patients WHERE patient_nhs_registration ='" + HQLookup.Text + "'";
 
-            MySqlCommand cmd = new MySqlCommand(cmdText, con);
-            reader = cmd.ExecuteReader();
-
-            if (reader.Read())
+            if (IsValid)
             {
-                HQNHSReg.Text = reader.GetValue(0).ToString();
-                HQFirstName.Text = reader.GetValue(1).ToString();
-                HQLastName.Text = reader.GetValue(2).ToString();
-                HQAddress.Text = reader.GetValue(3).ToString();
-                HQLocation.Text = reader.GetValue(4).ToString();
-                HQMedicalCondition.InnerText = reader.GetValue(5).ToString();
-
-                FindStatus.Text = "Patient Found!";
+                FindPatient();
             }
-            else
-            {
-                FindStatus.Text = "Failed to Find Patient";
-            }
-            con.Close();
 
         }
+
+        private void Insert()
+        {
+            try
+            {
+                var patient = new DataAccessLayer.Models.Patient();
+                {
+                    patient.patient_nhs_registration = HQNHSReg.Text;
+                    patient.patient_firstname = HQFirstName.Text;
+                    patient.patient_secondname = HQLastName.Text;
+                    patient.patient_address = HQAddress.Text;
+                    patient.patient_current_location = HQLocation.Text;
+                    patient.patient_medical_condition = HQMedicalCondition.InnerText;
+                }
+                logic.CreatePatient(patient);
+
+                SubmitStatus.Text = "Patient Sucessfully Created";
+            }
+            catch (Exception ex)
+            {
+                SubmitStatus.Text = ex.Message;
+            }
+
+        }
+
+        private void FindPatient()
+        {
+            try
+            {
+
+                string id = HQLookup.Text;
+
+                var foundpatient = logic.GetPatientById(id);
+
+                    HQFirstName.Text = foundpatient.patient_firstname;
+                    HQLastName.Text = foundpatient.patient_secondname;
+                    HQNHSReg.Text = foundpatient.patient_nhs_registration.ToString();
+                    HQAddress.Text = foundpatient.patient_address;
+                    HQLocation.Text = foundpatient.patient_current_location;
+                    HQMedicalCondition.InnerText = foundpatient.patient_medical_condition;
+
+                    FindStatus.Text = "Patient Found";
+
+            }
+            catch (NullReferenceException e)
+            {
+                FindStatus.Text = "Patient not Found";
+            }
+
+        }
+
     }
 }

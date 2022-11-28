@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KwikMedicalDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Hospital">
+          <Key>
+            <PropertyRef Name="hospital_id" />
+          </Key>
+          <Property Name="hospital_id" Type="smallint" Nullable="false" />
+          <Property Name="hospital_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="hospital_region" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Incidents">
+          <Key>
+            <PropertyRef Name="incident_number" />
+          </Key>
+          <Property Name="incident_number" Type="smallint" Nullable="false" />
+          <Property Name="incident_action_taken" Type="nvarchar" MaxLength="255" />
+          <Property Name="incident_diagnosis" Type="nvarchar" MaxLength="255" />
+          <Property Name="incident_callout_time" Type="nvarchar" MaxLength="255" />
+          <Property Name="patient_nhs_registration" Type="nvarchar" MaxLength="5" />
+          <Property Name="assigned_hospital" Type="smallint" />
+        </EntityType>
+        <EntityType Name="Patients">
+          <Key>
+            <PropertyRef Name="patient_nhs_registration" />
+          </Key>
+          <Property Name="patient_nhs_registration" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="patient_firstname" Type="nvarchar" MaxLength="25" />
+          <Property Name="patient_secondname" Type="nvarchar" MaxLength="25" />
+          <Property Name="patient_address" Type="nvarchar" MaxLength="100" />
+          <Property Name="patient_current_location" Type="nvarchar" MaxLength="100" />
+          <Property Name="patient_medical_condition" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Incidents_Hospital">
+          <End Role="Hospital" Type="Self.Hospital" Multiplicity="0..1" />
+          <End Role="Incidents" Type="Self.Incidents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hospital">
+              <PropertyRef Name="hospital_id" />
+            </Principal>
+            <Dependent Role="Incidents">
+              <PropertyRef Name="assigned_hospital" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incidents_Patients">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+          <End Role="Incidents" Type="Self.Incidents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="patient_nhs_registration" />
+            </Principal>
+            <Dependent Role="Incidents">
+              <PropertyRef Name="patient_nhs_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KwikMedicalDatabaseModelStoreContainer">
+          <EntitySet Name="Hospital" EntityType="Self.Hospital" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Incidents" EntityType="Self.Incidents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Incidents_Hospital" Association="Self.FK_Incidents_Hospital">
+            <End Role="Hospital" EntitySet="Hospital" />
+            <End Role="Incidents" EntitySet="Incidents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incidents_Patients" Association="Self.FK_Incidents_Patients">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Incidents" EntitySet="Incidents" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KwikMedicalDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Hospital">
+          <Key>
+            <PropertyRef Name="hospital_id" />
+          </Key>
+          <Property Name="hospital_id" Type="Int16" Nullable="false" />
+          <Property Name="hospital_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="hospital_region" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Incidents" Relationship="Self.FK_Incidents_Hospital" FromRole="Hospital" ToRole="Incidents" />
+        </EntityType>
+        <EntityType Name="Incident">
+          <Key>
+            <PropertyRef Name="incident_number" />
+          </Key>
+          <Property Name="incident_number" Type="Int16" Nullable="false" />
+          <Property Name="incident_action_taken" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="incident_diagnosis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="incident_callout_time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="patient_nhs_registration" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="assigned_hospital" Type="Int16" />
+          <NavigationProperty Name="Hospital" Relationship="Self.FK_Incidents_Hospital" FromRole="Incidents" ToRole="Hospital" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_Incidents_Patients" FromRole="Incidents" ToRole="Patients" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="patient_nhs_registration" />
+          </Key>
+          <Property Name="patient_nhs_registration" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="patient_firstname" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="patient_secondname" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="patient_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="patient_current_location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="patient_medical_condition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Incidents" Relationship="Self.FK_Incidents_Patients" FromRole="Patients" ToRole="Incidents" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Incidents_Hospital">
+          <End Role="Hospital" Type="Self.Hospital" Multiplicity="0..1" />
+          <End Role="Incidents" Type="Self.Incident" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hospital">
+              <PropertyRef Name="hospital_id" />
+            </Principal>
+            <Dependent Role="Incidents">
+              <PropertyRef Name="assigned_hospital" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incidents_Patients">
+          <End Role="Patients" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Incidents" Type="Self.Incident" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="patient_nhs_registration" />
+            </Principal>
+            <Dependent Role="Incidents">
+              <PropertyRef Name="patient_nhs_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KwikMedicalDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Hospitals" EntityType="Self.Hospital" />
+          <EntitySet Name="Incidents" EntityType="Self.Incident" />
+          <EntitySet Name="Patients" EntityType="Self.Patient" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Incidents_Hospital" Association="Self.FK_Incidents_Hospital">
+            <End Role="Hospital" EntitySet="Hospitals" />
+            <End Role="Incidents" EntitySet="Incidents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incidents_Patients" Association="Self.FK_Incidents_Patients">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Incidents" EntitySet="Incidents" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KwikMedicalDatabaseModelStoreContainer" CdmEntityContainer="KwikMedicalDatabaseEntities">
+          <EntitySetMapping Name="Hospitals">
+            <EntityTypeMapping TypeName="KwikMedicalDatabaseModel.Hospital">
+              <MappingFragment StoreEntitySet="Hospital">
+                <ScalarProperty Name="hospital_id" ColumnName="hospital_id" />
+                <ScalarProperty Name="hospital_name" ColumnName="hospital_name" />
+                <ScalarProperty Name="hospital_region" ColumnName="hospital_region" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Incidents">
+            <EntityTypeMapping TypeName="KwikMedicalDatabaseModel.Incident">
+              <MappingFragment StoreEntitySet="Incidents">
+                <ScalarProperty Name="incident_number" ColumnName="incident_number" />
+                <ScalarProperty Name="incident_action_taken" ColumnName="incident_action_taken" />
+                <ScalarProperty Name="incident_diagnosis" ColumnName="incident_diagnosis" />
+                <ScalarProperty Name="incident_callout_time" ColumnName="incident_callout_time" />
+                <ScalarProperty Name="patient_nhs_registration" ColumnName="patient_nhs_registration" />
+                <ScalarProperty Name="assigned_hospital" ColumnName="assigned_hospital" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="KwikMedicalDatabaseModel.Patient">
+              <MappingFragment StoreEntitySet="Patients">
+                <ScalarProperty Name="patient_nhs_registration" ColumnName="patient_nhs_registration" />
+                <ScalarProperty Name="patient_firstname" ColumnName="patient_firstname" />
+                <ScalarProperty Name="patient_secondname" ColumnName="patient_secondname" />
+                <ScalarProperty Name="patient_address" ColumnName="patient_address" />
+                <ScalarProperty Name="patient_current_location" ColumnName="patient_current_location" />
+                <ScalarProperty Name="patient_medical_condition" ColumnName="patient_medical_condition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="KwikMedicalDatabaseModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
