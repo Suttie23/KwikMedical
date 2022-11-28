@@ -9,6 +9,7 @@
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <asp:TextBox class="form-control" MaxLength="5" ID="HQLookup" runat="server"></asp:TextBox>
+                        <asp:Label ID="FindStatus" runat="server" Text=""></asp:Label>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <asp:Button class="btn btn-danger mt-3 align-middle" ID="HQLookupButton" runat="server" Text="Lookup Patient" OnClick="HQLookupButton_Click" />
@@ -57,15 +58,17 @@
                 <div class="row">
                     <div class="col-md-4 mt-md-0 mt-3 text-center">
                         <asp:Button class="btn btn-danger mt-3 align-middle" ID="HQSubmitPatientInformation" runat="server" Text="Submit Patient Information" OnClick="HQSubmitPatientInformation_Click" />
-                    </div>
-                    <div class="col-md-4 mt-md-0 mt-3 text-center">
                         <asp:Label ID="SubmitStatus" runat="server" Text=""></asp:Label>
                     </div>
                     <div class="col-md-4 mt-md-0 mt-3 text-center">
                         <asp:Button class="btn btn-danger mt-3 align-middle" ID="HQClearForm" runat="server" Text="Clear all Form Inputs" />
                     </div>
+                    <div class="col-md-4 mt-md-0 mt-3 text-center">
+                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="HQRequestAmbulance" runat="server" Text="Request Ambulance" />
+                    </div>
                 </div>
              </div>
+
         </div>
     </div>
 

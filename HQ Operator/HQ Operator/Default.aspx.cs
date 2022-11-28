@@ -64,11 +64,11 @@ namespace HQ_Operator
                 HQLocation.Text = reader.GetValue(4).ToString();
                 HQMedicalCondition.InnerText = reader.GetValue(5).ToString();
 
-                SubmitStatus.Text = "Patient Found!";
+                FindStatus.Text = "Patient Found!";
             }
             else
             {
-                SubmitStatus.Text = "Failed to Find Patient";
+                FindStatus.Text = "Failed to Find Patient";
             }
             con.Close();
 
