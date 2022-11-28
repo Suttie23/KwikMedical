@@ -1,83 +1,129 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Hospital._Default" %>
+﻿<%@ Page Title="KwikMedical Hospital Client" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Hospital._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
 <link href="styles.css" rel ="stylesheet" />
     <div class="wrapper rounded bg-white">
 
-        <div class="h3">Ambulance Patient Lookup (Incident Number)</div>
+        <div class="h3">KwikMedical Hospital Database</div>
         <div class="form">
-                <div class="row">
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <asp:TextBox class="form-control" ID="Lookup" runat="server"></asp:TextBox>
-                    </div>
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="InciLookupIncident" runat="server" Text="Lookup Incident" />
-                   </div>
-                </div>
             <hr/>
-            <div class="h3">Information From Hospital</div>
+            <div class="h3">Patient(s) Details</div>
                 <div class="row">
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>First Name</label>
-                        <asp:TextBox class="form-control" ID="InciFirstName" ReadOnly="true" runat="server"></asp:TextBox>
-                    </div>
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Last Name</label>
-                        <asp:TextBox class="form-control" ID="InciLastName" ReadOnly="true" runat="server"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>NHS Registration Number</label>
-                        <asp:TextBox class="form-control" ID="InciNHSReg" ReadOnly="true" runat="server"></asp:TextBox>
-                    </div>
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Address</label>
-                        <asp:TextBox class="form-control" ID="InciAddress" ReadOnly="true" runat="server"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Current Location</label>
-                        <asp:TextBox class="form-control" ID="InciLocation" ReadOnly="true" runat="server"></asp:TextBox>
-                    </div>
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Date Of Birth</label>
-                        <asp:TextBox class="form-control" ID="InciDateOfBirth" ReadOnly="true" runat="server"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="row"> 
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Medical Condition</label>
-                        <textarea id="InciMedicalCondition"  style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
-                    </div>
-                </div>
-                <hr/>
-                <div class="h4">Ambulance Updates</div>
-                <div class="row">
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Ambulance Diagnosis</label>
-                        <textarea id="AmbDiagnosis" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
-                    </div>
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Action Taken</label>
-                        <textarea id="AmbActionTaken" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Call-Out Length</label>
-                        <asp:TextBox class="form-control" ID="AmbCalloutLength" runat="server"></asp:TextBox>
+                    <div class="col-md-12 mt-md-0 mt-3">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">First</th>
+                              <th scope="col">Last</th>
+                              <th scope="col">Handle</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Larry</td>
+                              <td>the Bird</td>
+                              <td>@twitter</td>
+                            </tr>
+                          </tbody>
+                        </table>
                     </div>
                 </div>
                 <hr/>
                 <div class="row">
-                    <div class="col-md-6 mt-md-0 mt-3 text-center" style="margin-bottom: 10px;">
-                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="AmbUpdateHospital" runat="server" Text="Update Hospital" />
+                    <div class="col-md-5 mt-md-0 mt-3">
+                        <div class="h4">Previous Incidents</div>
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">First</th>
+                              <th scope="col">Last</th>
+                              <th scope="col">Handle</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Larry</td>
+                              <td>the Bird</td>
+                              <td>@twitter</td>
+                            </tr>
+                          </tbody>
+                        </table>
                     </div>
-                    <div class="col-md-6 mt-md-0 mt-3 text-center">
-                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="AmbClearForm" runat="server" Text="Clear Full Form" />
+                    <div class="col-md-2 mt-md-0 mt-3">
+                        </div>
+                    <div class="col-md-5 mt-md-0 mt-3">
+                        <div class="h4">Active Incidents</div>
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">First</th>
+                              <th scope="col">Last</th>
+                              <th scope="col">Handle</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Larry</td>
+                              <td>the Bird</td>
+                              <td>@twitter</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-4 mt-md-0 mt-5 text-center" style="margin-bottom: 10px;">
+                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="HospUpdatePatient" runat="server" Text="Update Selected Patient" />
+                    </div>
+                    <div class="col-md-4 mt-md-0 mt-3 text-center" style="margin-bottom: 10px;">
+                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="HospFilterPatient" runat="server" Text="Filter Selected Patient" />
+                    </div>
+                    <div class="col-md-4 mt-md-0 mt-3 text-center">
+                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="HospDeletePatient" runat="server" Text="Delete Selected Patient" />
                     </div>
                 </div>
         </div>

@@ -15,102 +15,30 @@ namespace Hospital
     {
 
         /// <summary>
-        /// Lookup control.
+        /// HospUpdatePatient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Lookup;
+        protected global::System.Web.UI.WebControls.Button HospUpdatePatient;
 
         /// <summary>
-        /// InciLookupIncident control.
+        /// HospFilterPatient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button InciLookupIncident;
+        protected global::System.Web.UI.WebControls.Button HospFilterPatient;
 
         /// <summary>
-        /// InciFirstName control.
+        /// HospDeletePatient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox InciFirstName;
-
-        /// <summary>
-        /// InciLastName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox InciLastName;
-
-        /// <summary>
-        /// InciNHSReg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox InciNHSReg;
-
-        /// <summary>
-        /// InciAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox InciAddress;
-
-        /// <summary>
-        /// InciLocation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox InciLocation;
-
-        /// <summary>
-        /// InciDateOfBirth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox InciDateOfBirth;
-
-        /// <summary>
-        /// AmbCalloutLength control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AmbCalloutLength;
-
-        /// <summary>
-        /// AmbUpdateHospital control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AmbUpdateHospital;
-
-        /// <summary>
-        /// AmbClearForm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AmbClearForm;
+        protected global::System.Web.UI.WebControls.Button HospDeletePatient;
     }
 }

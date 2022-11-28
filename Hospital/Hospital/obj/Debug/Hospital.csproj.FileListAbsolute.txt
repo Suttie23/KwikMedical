@@ -1,4 +1,3 @@
-C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\bin\Hospital.dll.config
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\bin\Hospital.dll
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\bin\Hospital.pdb
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\bin\roslyn\csc.exe
