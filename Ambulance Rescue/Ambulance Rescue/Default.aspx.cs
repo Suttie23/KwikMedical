@@ -42,13 +42,16 @@ namespace Ambulance_Rescue
         private void UpdateIncident()
         {
 
+            int id = 0;
+            id = int.Parse(InciNumber.Text);
+
             try
             {
-                var inci = new DataAccessLayer.Models.Incident
+                var inci = inciLogic.GetIncidentById(id);
                 {
-                    incident_action_taken = AmbAction.InnerText,
-                    incident_diagnosis = AmbDiagnosis.InnerText,
-                    incident_callout_time = AmbCalloutLength.Text
+                    inci.incident_diagnosis = AmbDiagnosis.InnerText;
+                    inci.incident_callout_time = AmbCalloutLength.Text;
+                    inci.incident_action_taken = AmbAction.InnerText;
                 };
                 inciLogic.UpdateIncident(inci);
 
@@ -70,9 +73,6 @@ namespace Ambulance_Rescue
             try
             {
 
-
-
-                //InciFirstName.Text = patLogic.GetPatientById(id).patient_firstname;
                 InciNumber.Text = inciLogic.GetIncidentById(id).incident_number.ToString();
                 InciNHSReg.Text = inciLogic.GetIncidentById(id).patient_nhs_registration.ToString();
                 InciAssignedHospital.Text = inciLogic.GetIncidentById(id).assigned_hospital.ToString();
