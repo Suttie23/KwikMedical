@@ -33,30 +33,12 @@ namespace Hospital
         protected global::System.Web.UI.WebControls.GridView AllGrid;
 
         /// <summary>
-        /// HospUpdatePatient control.
+        /// RefreshTables control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button HospUpdatePatient;
-
-        /// <summary>
-        /// HospFilterPatient control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button HospFilterPatient;
-
-        /// <summary>
-        /// HospDeletePatient control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button HospDeletePatient;
+        protected global::System.Web.UI.WebControls.Button RefreshTables;
     }
 }

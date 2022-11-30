@@ -32,6 +32,14 @@ namespace Hospital
 
         }
 
+        protected void RefreshTables_Click(object sender, EventArgs e)
+        {
+
+            PatientGridBind();
+            InciGridBind();
+
+        }
+
         protected void PatientGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             try
@@ -94,9 +102,5 @@ namespace Hospital
 
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
