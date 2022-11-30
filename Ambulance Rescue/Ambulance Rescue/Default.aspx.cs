@@ -101,26 +101,45 @@ namespace Ambulance_Rescue
         private void FindIncident()
         {
 
-            int id = 0;
-            id = int.Parse(Lookup.Text);
+            int id;
+            if(int.TryParse(Lookup.Text, out id))
+            {
+
+            }
+            else
+            {
+                Response.Write("<script type=\"text/javascript\">alert('Field should contain a number');</script>");
+            }
 
             try
             {
 
-                InciNumber.Text = inciLogic.GetIncidentById(id).incident_number.ToString();
-                InciNHSReg.Text = inciLogic.GetIncidentById(id).patient_nhs_registration.ToString();
-                InciAssignedHospital.Text = inciLogic.GetIncidentById(id).assigned_hospital.ToString();
-                InciLocation.Text = inciLogic.GetIncidentById(id).incident_location;
 
-                int nhs = int.Parse(InciNHSReg.Text);
+                var foundincident = inciLogic.GetIncidentById(id);
+                {
+                    if (foundincident != null)
+                    {
+                        InciNumber.Text = foundincident.incident_number.ToString();
+                        InciNHSReg.Text = foundincident.patient_nhs_registration.ToString();
+                        InciAssignedHospital.Text = foundincident.assigned_hospital.ToString();
+                        InciLocation.Text = foundincident.incident_location;
 
-                InciFirstName.Text = patLogic.GetPatientById(nhs).patient_firstname;
-                InciLastName.Text = patLogic.GetPatientById(nhs).patient_secondname;
-                InciAddress.Text = patLogic.GetPatientById(nhs).patient_address;
-                InciMedicalCondition.InnerText = patLogic.GetPatientById(nhs).patient_medical_condition;
+                        //int nhs = int.Parse(foundincident.patient_nhs_registration);
 
+                        InciFirstName.Text = patLogic.GetPatientById(foundincident.patient_nhs_registration).patient_firstname;
+                        InciLastName.Text = patLogic.GetPatientById(foundincident.patient_nhs_registration).patient_secondname;
+                        InciAddress.Text = patLogic.GetPatientById(foundincident.patient_nhs_registration).patient_address;
+                        InciMedicalCondition.InnerText = patLogic.GetPatientById(foundincident.patient_nhs_registration).patient_medical_condition;
 
-                FindStatus.Text = "Incident Found";
+                        Response.Write("<script type=\"text/javascript\">alert('Incident Found!');</script>");
+
+                    }
+                    else
+                    {
+                        Response.Write("<script type=\"text/javascript\">alert('Incident not Found!');</script>");
+                    }
+
+                }
 
             }
             catch (Exception)

@@ -71,8 +71,16 @@ namespace HQ_Operator
         private void FindPatient()
         {
 
-            int id = 0;
-            id = int.Parse(HQLookup.Text);
+
+            int id;
+            if (int.TryParse(HQLookup.Text, out id))
+            {
+
+            }
+            else
+            {
+                Response.Write("<script type=\"text/javascript\">alert('Field should contain a number');</script>");
+            }
 
             try
             {
