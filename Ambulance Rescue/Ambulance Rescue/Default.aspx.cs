@@ -89,10 +89,12 @@ namespace Ambulance_Rescue
                 };
                 inciLogic.UpdateIncident(inci);
 
+                Response.Write("<script type=\"text/javascript\">alert('Update submitted to hospital');</script>");
+
             }
             catch (Exception ex)
             {
-                UpdateStatus.Text = ex.Message;
+                Response.Write("<script type=\"text/javascript\">alert('An error has occured when updating the hospital');</script>");
             }
 
 
