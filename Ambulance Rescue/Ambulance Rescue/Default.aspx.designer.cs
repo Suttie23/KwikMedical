@@ -24,6 +24,15 @@ namespace Ambulance_Rescue
         protected global::System.Web.UI.WebControls.TextBox Lookup;
 
         /// <summary>
+        /// FindStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FindStatus;
+
+        /// <summary>
         /// InciLookupIncident control.
         /// </summary>
         /// <remarks>
@@ -150,12 +159,12 @@ namespace Ambulance_Rescue
         protected global::System.Web.UI.WebControls.Button AmbClearForm;
 
         /// <summary>
-        /// SubmitStatus control.
+        /// UpdateStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SubmitStatus;
+        protected global::System.Web.UI.WebControls.Label UpdateStatus;
     }
 }

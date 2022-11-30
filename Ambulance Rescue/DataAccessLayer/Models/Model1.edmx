@@ -18,6 +18,7 @@
             <PropertyRef Name="incident_number" />
           </Key>
           <Property Name="incident_number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="incident_location" Type="nvarchar" MaxLength="255" />
           <Property Name="incident_action_taken" Type="nvarchar" MaxLength="255" />
           <Property Name="incident_diagnosis" Type="nvarchar" MaxLength="255" />
           <Property Name="incident_callout_time" Type="nvarchar" MaxLength="255" />
@@ -32,7 +33,6 @@
           <Property Name="patient_firstname" Type="nvarchar" MaxLength="25" />
           <Property Name="patient_secondname" Type="nvarchar" MaxLength="25" />
           <Property Name="patient_address" Type="nvarchar" MaxLength="100" />
-          <Property Name="patient_current_location" Type="nvarchar" MaxLength="100" />
           <Property Name="patient_medical_condition" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -102,6 +102,7 @@
             <PropertyRef Name="incident_number" />
           </Key>
           <Property Name="incident_number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="incident_location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="incident_action_taken" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="incident_diagnosis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="incident_callout_time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -118,7 +119,6 @@
           <Property Name="patient_firstname" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="patient_secondname" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="patient_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="patient_current_location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="patient_medical_condition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Incidents" Relationship="Self.FK_Incidents_Patients" FromRole="Patients" ToRole="Incidents" />
         </EntityType>
@@ -189,6 +189,7 @@
             <EntityTypeMapping TypeName="KwikMedicalDatabaseModel.Incident">
               <MappingFragment StoreEntitySet="Incidents">
                 <ScalarProperty Name="incident_number" ColumnName="incident_number" />
+                <ScalarProperty Name="incident_location" ColumnName="incident_location" />
                 <ScalarProperty Name="incident_action_taken" ColumnName="incident_action_taken" />
                 <ScalarProperty Name="incident_diagnosis" ColumnName="incident_diagnosis" />
                 <ScalarProperty Name="incident_callout_time" ColumnName="incident_callout_time" />
@@ -204,7 +205,6 @@
                 <ScalarProperty Name="patient_firstname" ColumnName="patient_firstname" />
                 <ScalarProperty Name="patient_secondname" ColumnName="patient_secondname" />
                 <ScalarProperty Name="patient_address" ColumnName="patient_address" />
-                <ScalarProperty Name="patient_current_location" ColumnName="patient_current_location" />
                 <ScalarProperty Name="patient_medical_condition" ColumnName="patient_medical_condition" />
               </MappingFragment>
             </EntityTypeMapping>

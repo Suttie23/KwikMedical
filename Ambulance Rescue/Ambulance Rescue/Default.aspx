@@ -11,6 +11,7 @@
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <asp:TextBox class="form-control" ID="Lookup" runat="server"></asp:TextBox>
+                        <asp:Label ID="FindStatus" runat="server" Text=""></asp:Label>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <asp:Button class="btn btn-danger mt-3 align-middle" ID="InciLookupIncident" runat="server" Text="Lookup Incident" OnClick="InciLookupIncident_Click" />
@@ -72,8 +73,8 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Call-Out Length</label>
-                        <asp:TextBox class="form-control" ID="AmbCalloutLength" runat="server"></asp:TextBox>
+                        <label>Callout Time</label>
+                        <asp:TextBox class="form-control" ID="AmbCalloutLength" ReadOnly="true" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <hr/>
@@ -82,9 +83,9 @@
                         <asp:Button class="btn btn-danger mt-3 align-middle" ID="AmbUpdateHospital" runat="server" Text="Update Hospital" OnClick="AmbUpdateHospital_Click" Height="37px" Width="172px" />
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3 text-center">
-                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="AmbClearForm" runat="server" Text="Clear Full Form" />
+                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="AmbClearForm" runat="server" Text="Clear Full Form" OnClick="AmbClearForm_Click" />
                     </div>
-                    <asp:Label ID="SubmitStatus" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="UpdateStatus" runat="server" Text=""></asp:Label>
                 </div>
         </div>
     </div>

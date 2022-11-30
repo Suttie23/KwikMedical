@@ -29,6 +29,13 @@ namespace Ambulance_Rescue
 
         }
 
+        protected void AmbClearForm_Click(object sender, EventArgs e)
+        {
+
+            ClearAll();
+
+        }
+
         protected void AmbUpdateHospital_Click(object sender, EventArgs e)
         {
 
@@ -36,6 +43,28 @@ namespace Ambulance_Rescue
             {
                 UpdateIncident();
             }
+
+            ClearAll();
+
+        }
+
+        private void ClearAll()
+        {
+
+            FindStatus.Text = "";
+            UpdateStatus.Text = "";
+            AmbAction.InnerText = "";
+            AmbCalloutLength.Text = "";
+            AmbDiagnosis.InnerText = "";
+            InciFirstName.Text = "";
+            InciLastName.Text = "";
+            InciNHSReg.Text = "";
+            InciNumber.Text = "";
+            InciLocation.Text = "";
+            InciAssignedHospital.Text = "";
+            InciMedicalCondition.InnerText = "";
+            InciAddress.Text = "";
+            Lookup.Text = "";
 
         }
 
@@ -58,7 +87,7 @@ namespace Ambulance_Rescue
             }
             catch (Exception ex)
             {
-                SubmitStatus.Text = ex.Message;
+                UpdateStatus.Text = ex.Message;
             }
 
 
@@ -76,22 +105,22 @@ namespace Ambulance_Rescue
                 InciNumber.Text = inciLogic.GetIncidentById(id).incident_number.ToString();
                 InciNHSReg.Text = inciLogic.GetIncidentById(id).patient_nhs_registration.ToString();
                 InciAssignedHospital.Text = inciLogic.GetIncidentById(id).assigned_hospital.ToString();
+                InciLocation.Text = inciLogic.GetIncidentById(id).incident_location;
 
                 int nhs = int.Parse(InciNHSReg.Text);
 
                 InciFirstName.Text = patLogic.GetPatientById(nhs).patient_firstname;
                 InciLastName.Text = patLogic.GetPatientById(nhs).patient_secondname;
                 InciAddress.Text = patLogic.GetPatientById(nhs).patient_address;
-                InciLocation.Text = patLogic.GetPatientById(nhs).patient_current_location;
                 InciMedicalCondition.InnerText = patLogic.GetPatientById(nhs).patient_medical_condition;
 
 
-                SubmitStatus.Text = "Incident Found";
+                FindStatus.Text = "Incident Found";
 
             }
             catch (Exception)
             {
-                SubmitStatus.Text = "Incident not Found";
+                FindStatus.Text = "Incident not Found";
                 throw;
             }
 

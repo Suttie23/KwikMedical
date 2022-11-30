@@ -14,6 +14,7 @@
       <EntityTypeMapping TypeName="KwikMedicalDatabaseModel.Incident">
         <MappingFragment StoreEntitySet="Incidents">
           <ScalarProperty Name="incident_number" ColumnName="incident_number" />
+          <ScalarProperty Name="incident_location" ColumnName="incident_location" />
           <ScalarProperty Name="incident_action_taken" ColumnName="incident_action_taken" />
           <ScalarProperty Name="incident_diagnosis" ColumnName="incident_diagnosis" />
           <ScalarProperty Name="incident_callout_time" ColumnName="incident_callout_time" />
@@ -29,7 +30,6 @@
           <ScalarProperty Name="patient_firstname" ColumnName="patient_firstname" />
           <ScalarProperty Name="patient_secondname" ColumnName="patient_secondname" />
           <ScalarProperty Name="patient_address" ColumnName="patient_address" />
-          <ScalarProperty Name="patient_current_location" ColumnName="patient_current_location" />
           <ScalarProperty Name="patient_medical_condition" ColumnName="patient_medical_condition" />
         </MappingFragment>
       </EntityTypeMapping>
