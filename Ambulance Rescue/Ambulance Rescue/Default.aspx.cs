@@ -54,7 +54,6 @@ namespace Ambulance_Rescue
             FindStatus.Text = "";
             UpdateStatus.Text = "";
             AmbAction.InnerText = "";
-            AmbCalloutLength.Text = "";
             AmbDiagnosis.InnerText = "";
             InciFirstName.Text = "";
             InciLastName.Text = "";
