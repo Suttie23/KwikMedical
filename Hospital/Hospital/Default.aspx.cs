@@ -24,8 +24,6 @@ namespace Hospital
             {
                 PatientGridBind();
                 InciGridBind();
-                //testGridBind();
-
 
             }
 
@@ -100,6 +98,19 @@ namespace Hospital
                 throw;
             }
 
+        }
+
+        protected void UpdateButton_Click(object sender, EventArgs e)
+        {
+            mainsection.Visible = false;
+            updateformsection.Visible = true;
+        }
+
+
+        protected void EdCancel_Click(object sender, EventArgs e)
+        {
+            mainsection.Visible = true;
+            updateformsection.Visible = false;
         }
 
     }
