@@ -15,6 +15,7 @@ namespace DataAccessLayer.Models
     public partial class Incident
     {
         public int incident_number { get; set; }
+        public string incident_location { get; set; }
         public string incident_action_taken { get; set; }
         public string incident_diagnosis { get; set; }
         public string incident_callout_time { get; set; }

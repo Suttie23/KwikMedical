@@ -13,6 +13,7 @@
       <PropertyRef Name="incident_number" />
     </Key>
     <Property Name="incident_number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="incident_location" Type="nvarchar" MaxLength="255" />
     <Property Name="incident_action_taken" Type="nvarchar" MaxLength="255" />
     <Property Name="incident_diagnosis" Type="nvarchar" MaxLength="255" />
     <Property Name="incident_callout_time" Type="nvarchar" MaxLength="255" />
@@ -27,7 +28,6 @@
     <Property Name="patient_firstname" Type="nvarchar" MaxLength="25" />
     <Property Name="patient_secondname" Type="nvarchar" MaxLength="25" />
     <Property Name="patient_address" Type="nvarchar" MaxLength="100" />
-    <Property Name="patient_current_location" Type="nvarchar" MaxLength="100" />
     <Property Name="patient_medical_condition" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="sysdiagrams">

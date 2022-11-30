@@ -24,7 +24,6 @@ namespace DataAccessLayer.Models
         public string patient_firstname { get; set; }
         public string patient_secondname { get; set; }
         public string patient_address { get; set; }
-        public string patient_current_location { get; set; }
         public string patient_medical_condition { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

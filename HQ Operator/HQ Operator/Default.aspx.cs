@@ -55,7 +55,6 @@ namespace HQ_Operator
                     patient.patient_firstname = HQFirstName.Text;
                     patient.patient_secondname = HQLastName.Text;
                     patient.patient_address = HQAddress.Text;
-                    patient.patient_current_location = HQLocation.Text;
                     patient.patient_medical_condition = HQMedicalCondition.InnerText;
                 }
                 patLogic.CreatePatient(patient);
@@ -82,7 +81,6 @@ namespace HQ_Operator
                     HQLastName.Text = patLogic.GetPatientById(id).patient_secondname;
                     HQNHSReg.Text = patLogic.GetPatientById(id).patient_nhs_registration.ToString();
                     HQAddress.Text = patLogic.GetPatientById(id).patient_address;
-                    HQLocation.Text = patLogic.GetPatientById(id).patient_current_location;
                     HQMedicalCondition.InnerText = patLogic.GetPatientById(id).patient_medical_condition;
 
                     FindStatus.Text = "Patient Found";
@@ -110,13 +108,95 @@ namespace HQ_Operator
 
         }
 
-        protected void HQRequestAmbulance_Click(object sender, EventArgs e)
+        protected void HQRequestAmbulance1_Click(object sender, EventArgs e)
+        {
+
+
+                HQRequestAmbulance1.Visible = false;
+                HQRequestAmbulance2.Visible = true;
+
+                HospitalLabel.Visible = true;
+                HospitalList.Visible = true;
+
+                string region = HQLocation.Text;
+
+
+
+                switch (region)
+                {
+                    case "City of Edinburgh":
+
+                        HospAstley.Enabled = true;
+                        HospChalmers.Enabled = true;
+                        HospCorstorphine.Enabled = true;
+                        HospEdinDental.Enabled = true;
+                        HospLauriston.Enabled = true;
+                        HospLeith.Enabled = true;
+                        HospLiberton.Enabled = true;
+                        HospPrincess.Enabled = true;
+                        HospRoyalEd.Enabled = true;
+                        HospSickKids.Enabled = true;
+                        HospRoyalInfirm.Enabled = true;
+                        HospRoyalVictoria.Enabled = true;
+                        HospWesternGeneral.Enabled = true;
+
+                        break;
+                    case "East Lothian":
+
+                        HospBelhaven.Enabled = true;
+                        HospEdington.Enabled = true;
+                        HospEastLothan.Enabled = true;
+
+                        break;
+                    case "Midlothian":
+
+                        HospMidlothian.Enabled = true;
+
+                        break;
+                    case "West Lothian":
+
+                        HospStJohns.Enabled = true;
+                        HospStMichaels.Enabled = true;
+                        HospTippethill.Enabled = true;
+
+                        break;
+                }
+            
+        }
+
+        protected void HQRequestAmbulance2_Click(object sender, EventArgs e)
         {
 
             if (IsValid)
             {
                 InsertInci();
             }
+
+            HQRequestAmbulance1.Visible = true;
+            HQRequestAmbulance2.Visible = false;
+            HospitalLabel.Visible = false;
+            HospitalList.Visible = false;
+
+            HospAstley.Enabled = false;
+            HospChalmers.Enabled = false;
+            HospCorstorphine.Enabled = false;
+            HospEdinDental.Enabled = false;
+            HospLauriston.Enabled = false;
+            HospLeith.Enabled = false;
+            HospLiberton.Enabled = false;
+            HospPrincess.Enabled = false;
+            HospRoyalEd.Enabled = false;
+            HospSickKids.Enabled = false;
+            HospRoyalInfirm.Enabled = false;
+            HospRoyalVictoria.Enabled = false;
+            HospWesternGeneral.Enabled = false;
+            HospBelhaven.Enabled = false;
+            HospEdington.Enabled = false;
+            HospEastLothan.Enabled = false;
+            HospMidlothian.Enabled = false;
+            HospStJohns.Enabled = false;
+            HospStMichaels.Enabled = false;
+            HospTippethill.Enabled = false;
 
         }
 
@@ -128,7 +208,8 @@ namespace HQ_Operator
                 var incident = new DataAccessLayer.Models.Incident();
                 {
                     incident.patient_nhs_registration = int.Parse(HQNHSReg.Text);
-                    incident.assigned_hospital = 10;
+                    incident.incident_location = HQLocation.Text;
+                    incident.assigned_hospital = int.Parse(HospitalList.SelectedValue);
                 }
                 inciLogic.CreateIncident(incident);
 
