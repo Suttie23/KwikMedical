@@ -59,11 +59,11 @@ namespace HQ_Operator
                 }
                 patLogic.CreatePatient(patient);
 
-                SubmitStatus.Text = "Patient Sucessfully Created";
+                Response.Write("<script type=\"text/javascript\">alert('Patient has been submitted');</script>"); ;
             }
             catch (Exception ex)
             {
-                SubmitStatus.Text = ex.Message;
+                Response.Write("<script type=\"text/javascript\">alert('There was an error submitting the patient, please try again');</script>");
             }
 
         }
@@ -71,26 +71,38 @@ namespace HQ_Operator
         private void FindPatient()
         {
 
-                int id = 0;
-                id = int.Parse(HQLookup.Text);
+            int id = 0;
+            id = int.Parse(HQLookup.Text);
 
-                try
+            try
+            {
+
+                var foundpatient = patLogic.GetPatientById(id);
                 {
+                    if (foundpatient != null)
+                    {
+                        HQFirstName.Text = foundpatient.patient_firstname;
+                        HQLastName.Text = foundpatient.patient_secondname;
+                        HQNHSReg.Text = foundpatient.patient_nhs_registration.ToString();
+                        HQAddress.Text = foundpatient.patient_address;
+                        HQMedicalCondition.InnerText = foundpatient.patient_medical_condition;
 
-                    HQFirstName.Text = patLogic.GetPatientById(id).patient_firstname;
-                    HQLastName.Text = patLogic.GetPatientById(id).patient_secondname;
-                    HQNHSReg.Text = patLogic.GetPatientById(id).patient_nhs_registration.ToString();
-                    HQAddress.Text = patLogic.GetPatientById(id).patient_address;
-                    HQMedicalCondition.InnerText = patLogic.GetPatientById(id).patient_medical_condition;
+                        Response.Write("<script type=\"text/javascript\">alert('Patient Found!');</script>");
 
-                    FindStatus.Text = "Patient Found";
+                    }
+                    else
+                    {
+                        Response.Write("<script type=\"text/javascript\">alert('Patient not Found!');</script>");
+                    }
 
                 }
-                catch (Exception)
-                {
-                    FindStatus.Text = "Patient not Found";
-                    throw;
-                }
+
+            }
+            catch (Exception)
+            {
+                Response.Write("<script type=\"text/javascript\">alert('An Error has ocurred');</script>");
+                throw;
+            }
 
 
         }
@@ -112,56 +124,56 @@ namespace HQ_Operator
         {
 
 
-                HQRequestAmbulance1.Visible = false;
-                HQRequestAmbulance2.Visible = true;
+            HQRequestAmbulance1.Visible = false;
+            HQRequestAmbulance2.Visible = true;
 
-                HospitalLabel.Visible = true;
-                HospitalList.Visible = true;
+            HospitalLabel.Visible = true;
+            HospitalList.Visible = true;
 
-                string region = HQLocation.Text;
+            string region = HQLocation.Text;
 
 
 
-                switch (region)
-                {
-                    case "City of Edinburgh":
+            switch (region)
+            {
+                case "City of Edinburgh":
 
-                        HospAstley.Enabled = true;
-                        HospChalmers.Enabled = true;
-                        HospCorstorphine.Enabled = true;
-                        HospEdinDental.Enabled = true;
-                        HospLauriston.Enabled = true;
-                        HospLeith.Enabled = true;
-                        HospLiberton.Enabled = true;
-                        HospPrincess.Enabled = true;
-                        HospRoyalEd.Enabled = true;
-                        HospSickKids.Enabled = true;
-                        HospRoyalInfirm.Enabled = true;
-                        HospRoyalVictoria.Enabled = true;
-                        HospWesternGeneral.Enabled = true;
+                    HospAstley.Enabled = true;
+                    HospChalmers.Enabled = true;
+                    HospCorstorphine.Enabled = true;
+                    HospEdinDental.Enabled = true;
+                    HospLauriston.Enabled = true;
+                    HospLeith.Enabled = true;
+                    HospLiberton.Enabled = true;
+                    HospPrincess.Enabled = true;
+                    HospRoyalEd.Enabled = true;
+                    HospSickKids.Enabled = true;
+                    HospRoyalInfirm.Enabled = true;
+                    HospRoyalVictoria.Enabled = true;
+                    HospWesternGeneral.Enabled = true;
 
-                        break;
-                    case "East Lothian":
+                    break;
+                case "East Lothian":
 
-                        HospBelhaven.Enabled = true;
-                        HospEdington.Enabled = true;
-                        HospEastLothan.Enabled = true;
+                    HospBelhaven.Enabled = true;
+                    HospEdington.Enabled = true;
+                    HospEastLothan.Enabled = true;
 
-                        break;
-                    case "Midlothian":
+                    break;
+                case "Midlothian":
 
-                        HospMidlothian.Enabled = true;
+                    HospMidlothian.Enabled = true;
 
-                        break;
-                    case "West Lothian":
+                    break;
+                case "West Lothian":
 
-                        HospStJohns.Enabled = true;
-                        HospStMichaels.Enabled = true;
-                        HospTippethill.Enabled = true;
+                    HospStJohns.Enabled = true;
+                    HospStMichaels.Enabled = true;
+                    HospTippethill.Enabled = true;
 
-                        break;
-                }
-            
+                    break;
+            }
+
         }
 
         protected void HQRequestAmbulance2_Click(object sender, EventArgs e)
@@ -214,11 +226,11 @@ namespace HQ_Operator
                 }
                 inciLogic.CreateIncident(incident);
 
-                SubmitStatus.Text = "Incident Report Sent to Ambulance";
+                Response.Write("<script type=\"text/javascript\">alert('Incident Report Sent to Ambulance');</script>");
             }
             catch (Exception ex)
             {
-                SubmitStatus.Text = ex.Message;
+                Response.Write("<script type=\"text/javascript\">alert('Database Error - Please enter the patient into the system first. If the issue persists, contact support');</script>");
             }
 
         }

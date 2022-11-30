@@ -50,7 +50,7 @@
                         </asp:DropDownList>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Medical Condition</label>
+                        <label>Underlying Medical Conditions</label>
                         <textarea id="HQMedicalCondition" runat="server" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
                     </div>
                 </div>
