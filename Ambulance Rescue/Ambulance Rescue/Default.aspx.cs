@@ -13,6 +13,7 @@ namespace Ambulance_Rescue
 
         PatientLogic patLogic = new PatientLogic();
         IncidentLogic inciLogic = new IncidentLogic();
+        HospitalLogic hospLogic = new HospitalLogic();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -123,7 +124,7 @@ namespace Ambulance_Rescue
                     {
                         InciNumber.Text = foundincident.incident_number.ToString();
                         InciNHSReg.Text = foundincident.patient_nhs_registration.ToString();
-                        InciAssignedHospital.Text = foundincident.assigned_hospital.ToString();
+                        InciAssignedHospital.Text = hospLogic.GetHospitalById(foundincident.assigned_hospital).hospital_name;
                         InciLocation.Text = foundincident.incident_location;
 
                         //int nhs = int.Parse(foundincident.patient_nhs_registration);

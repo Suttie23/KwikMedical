@@ -80,3 +80,4 @@ C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambula
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambulance Rescue\bin\BusinessLogic.pdb
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambulance Rescue\bin\DataAccessLayer.pdb
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambulance Rescue\bin\DataAccessLayer.dll.config
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Ambulance Rescue\Ambulance Rescue\bin\Ambulance Rescue.dll.config
