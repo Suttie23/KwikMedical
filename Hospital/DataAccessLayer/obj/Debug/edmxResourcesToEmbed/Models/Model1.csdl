@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KwikMedicalDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Hospital">
+    <Key>
+      <PropertyRef Name="hospital_id" />
+    </Key>
+    <Property Name="hospital_id" Type="Int32" Nullable="false" />
+    <Property Name="hospital_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="hospital_region" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Incidents" Relationship="Self.FK_Incidents_Hospital1" FromRole="Hospital" ToRole="Incidents" />
+  </EntityType>
+  <EntityType Name="Incident">
+    <Key>
+      <PropertyRef Name="incident_number" />
+    </Key>
+    <Property Name="incident_number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="incident_reported_time" Type="DateTime" Precision="3" />
+    <Property Name="incident_location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="incident_action_taken" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="incident_diagnosis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="incident_callout_time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="patient_nhs_registration" Type="Int32" />
+    <Property Name="assigned_hospital" Type="Int32" />
+    <NavigationProperty Name="Hospital" Relationship="Self.FK_Incidents_Hospital1" FromRole="Incidents" ToRole="Hospital" />
+    <NavigationProperty Name="Patient" Relationship="Self.FK_Incidents_Patients" FromRole="Incidents" ToRole="Patients" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="patient_nhs_registration" />
+    </Key>
+    <Property Name="patient_nhs_registration" Type="Int32" Nullable="false" />
+    <Property Name="patient_firstname" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="patient_secondname" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="patient_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="patient_medical_condition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Incidents" Relationship="Self.FK_Incidents_Patients" FromRole="Patients" ToRole="Incidents" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Incidents_Hospital1">
+    <End Role="Hospital" Type="Self.Hospital" Multiplicity="0..1" />
+    <End Role="Incidents" Type="Self.Incident" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospital">
+        <PropertyRef Name="hospital_id" />
+      </Principal>
+      <Dependent Role="Incidents">
+        <PropertyRef Name="assigned_hospital" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Incidents_Patients">
+    <End Role="Patients" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="Incidents" Type="Self.Incident" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="patient_nhs_registration" />
+      </Principal>
+      <Dependent Role="Incidents">
+        <PropertyRef Name="patient_nhs_registration" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KwikMedicalDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Hospitals" EntityType="Self.Hospital" />
+    <EntitySet Name="Incidents" EntityType="Self.Incident" />
+    <EntitySet Name="Patients" EntityType="Self.Patient" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_Incidents_Hospital1" Association="Self.FK_Incidents_Hospital1">
+      <End Role="Hospital" EntitySet="Hospitals" />
+      <End Role="Incidents" EntitySet="Incidents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Incidents_Patients" Association="Self.FK_Incidents_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Incidents" EntitySet="Incidents" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

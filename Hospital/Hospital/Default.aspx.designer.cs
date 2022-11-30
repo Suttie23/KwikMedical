@@ -15,6 +15,24 @@ namespace Hospital
     {
 
         /// <summary>
+        /// PatientGrid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView PatientGrid;
+
+        /// <summary>
+        /// AllGrid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView AllGrid;
+
+        /// <summary>
         /// HospUpdatePatient control.
         /// </summary>
         /// <remarks>

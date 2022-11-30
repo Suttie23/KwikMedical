@@ -71,3 +71,12 @@ C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\obj\D
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\obj\Debug\Hospital.csproj.CopyComplete
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\obj\Debug\Hospital.dll
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\obj\Debug\Hospital.pdb
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\bin\BusinessLogic.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\bin\DataAccessLayer.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\bin\BusinessLogic.pdb
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\bin\DataAccessLayer.pdb
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\bin\EntityFramework.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\bin\EntityFramework.SqlServer.dll
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\bin\DataAccessLayer.dll.config
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\bin\EntityFramework.xml
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\Hospital\bin\EntityFramework.SqlServer.xml
