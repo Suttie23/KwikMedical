@@ -18,6 +18,7 @@
             <PropertyRef Name="incident_number" />
           </Key>
           <Property Name="incident_number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="incident_reported_time" Type="datetime" />
           <Property Name="incident_location" Type="nvarchar" MaxLength="255" />
           <Property Name="incident_action_taken" Type="nvarchar" MaxLength="255" />
           <Property Name="incident_diagnosis" Type="nvarchar" MaxLength="255" />
@@ -102,6 +103,7 @@
             <PropertyRef Name="incident_number" />
           </Key>
           <Property Name="incident_number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="incident_reported_time" Type="DateTime" Precision="3" />
           <Property Name="incident_location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="incident_action_taken" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="incident_diagnosis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -189,6 +191,7 @@
             <EntityTypeMapping TypeName="KwikMedicalDatabaseModel.Incident">
               <MappingFragment StoreEntitySet="Incidents">
                 <ScalarProperty Name="incident_number" ColumnName="incident_number" />
+                <ScalarProperty Name="incident_reported_time" ColumnName="incident_reported_time" />
                 <ScalarProperty Name="incident_location" ColumnName="incident_location" />
                 <ScalarProperty Name="incident_action_taken" ColumnName="incident_action_taken" />
                 <ScalarProperty Name="incident_diagnosis" ColumnName="incident_diagnosis" />

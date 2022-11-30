@@ -21,6 +21,7 @@ namespace DataAccessLayer.Models
         public string incident_callout_time { get; set; }
         public Nullable<int> patient_nhs_registration { get; set; }
         public Nullable<int> assigned_hospital { get; set; }
+        public Nullable<System.DateTime> incident_reported_time { get; set; }
     
         public virtual Hospital Hospital { get; set; }
         public virtual Patient Patient { get; set; }

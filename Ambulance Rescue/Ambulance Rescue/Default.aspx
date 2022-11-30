@@ -74,7 +74,7 @@
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Callout Time</label>
-                        <asp:TextBox class="form-control" ID="AmbCalloutLength" ReadOnly="true" runat="server"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="AmbCalloutLength" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <hr/>

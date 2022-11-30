@@ -13,6 +13,7 @@
       <PropertyRef Name="incident_number" />
     </Key>
     <Property Name="incident_number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="incident_reported_time" Type="datetime" />
     <Property Name="incident_location" Type="nvarchar" MaxLength="255" />
     <Property Name="incident_action_taken" Type="nvarchar" MaxLength="255" />
     <Property Name="incident_diagnosis" Type="nvarchar" MaxLength="255" />

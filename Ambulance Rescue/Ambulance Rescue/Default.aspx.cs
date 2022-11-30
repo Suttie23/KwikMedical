@@ -79,8 +79,14 @@ namespace Ambulance_Rescue
                 var inci = inciLogic.GetIncidentById(id);
                 {
                     inci.incident_diagnosis = AmbDiagnosis.InnerText;
-                    inci.incident_callout_time = AmbCalloutLength.Text;
-                    inci.incident_action_taken = AmbAction.InnerText;
+                    inci.incident_action_taken = AmbAction.InnerText;                   
+
+                    var starttime = inci.incident_reported_time;
+                    var endtime = DateTime.Now;
+
+                    TimeSpan span = endtime.Subtract((DateTime)starttime);
+
+                    inci.incident_callout_time = span.Minutes.ToString() + " Minutes";
                 };
                 inciLogic.UpdateIncident(inci);
 

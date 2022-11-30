@@ -207,6 +207,7 @@ namespace HQ_Operator
             {
                 var incident = new DataAccessLayer.Models.Incident();
                 {
+                    incident.incident_reported_time = DateTime.Now;
                     incident.patient_nhs_registration = int.Parse(HQNHSReg.Text);
                     incident.incident_location = HQLocation.Text;
                     incident.assigned_hospital = int.Parse(HospitalList.SelectedValue);

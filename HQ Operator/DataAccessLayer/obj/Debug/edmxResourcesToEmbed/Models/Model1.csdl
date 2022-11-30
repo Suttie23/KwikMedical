@@ -14,6 +14,7 @@
       <PropertyRef Name="incident_number" />
     </Key>
     <Property Name="incident_number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="incident_reported_time" Type="DateTime" Precision="3" />
     <Property Name="incident_location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="incident_action_taken" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="incident_diagnosis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />

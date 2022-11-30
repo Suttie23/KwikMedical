@@ -14,6 +14,7 @@
       <EntityTypeMapping TypeName="KwikMedicalDatabaseModel.Incident">
         <MappingFragment StoreEntitySet="Incidents">
           <ScalarProperty Name="incident_number" ColumnName="incident_number" />
+          <ScalarProperty Name="incident_reported_time" ColumnName="incident_reported_time" />
           <ScalarProperty Name="incident_location" ColumnName="incident_location" />
           <ScalarProperty Name="incident_action_taken" ColumnName="incident_action_taken" />
           <ScalarProperty Name="incident_diagnosis" ColumnName="incident_diagnosis" />

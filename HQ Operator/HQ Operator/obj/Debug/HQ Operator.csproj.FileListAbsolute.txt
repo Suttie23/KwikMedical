@@ -268,4 +268,3 @@ C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\EntityFramework.xml
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\EntityFramework.SqlServer.dll
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\EntityFramework.SqlServer.xml
-C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\HQ Operator\HQ Operator\bin\HQ Operator.dll.config

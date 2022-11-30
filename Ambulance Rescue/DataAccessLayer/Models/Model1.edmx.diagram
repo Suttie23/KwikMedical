@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="6ca088420f574527903f6c76102aa605" Name="Diagram1">
         <EntityTypeShape EntityType="KwikMedicalDatabaseModel.Hospital" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KwikMedicalDatabaseModel.Incident" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="KwikMedicalDatabaseModel.Incident" Width="3.5" PointX="3.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="KwikMedicalDatabaseModel.Patient" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="KwikMedicalDatabaseModel.sysdiagram" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="KwikMedicalDatabaseModel.FK_Incidents_Hospital1" ManuallyRouted="false" />
