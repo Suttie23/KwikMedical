@@ -39,5 +39,12 @@ namespace BusinessLogic
 
         }
 
+        public void DeleteIncident(int id)
+        {
+
+            dal.DeleteIncident(id);
+
+        }
+
     }
 }

@@ -32,10 +32,17 @@ namespace BusinessLogic
 
         }
 
-        public void DeletePatient(string id)
+        public void DeletePatient(int id)
         {
 
             dal.DeletePatient(id);
+
+        }
+
+        public void UpdatePatient(Patient patient)
+        {
+
+            dal.UpdatePatient(patient);
 
         }
 

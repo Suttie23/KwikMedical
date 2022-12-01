@@ -9,3 +9,4 @@ C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\DataAccessLaye
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\DataAccessLayer\bin\Debug\EntityFramework.xml
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\Suttie\Desktop\Projects\C# Projects\KwikMedical\Hospital\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache

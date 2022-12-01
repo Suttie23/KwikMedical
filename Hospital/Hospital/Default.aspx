@@ -83,7 +83,7 @@
     </style>
 
     <div id="mainsection" visible="true" runat="server">
-        <div class="h3">KwikMedical Hospital Patient Database</div>
+        <div class="h1">KwikMedical Hospital Patient Database</div>
         <div class="row">
             <asp:GridView runat="server" ID="PatientGrid" PageSize="8" HorizontalAlign="Center"
                 CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header"
@@ -95,16 +95,6 @@
                     <asp:BoundField DataField="patient_secondname" HeaderText="Last Name" />
                     <asp:BoundField DataField="patient_address" HeaderText="Address" />
                     <asp:BoundField DataField="patient_medical_condition" HeaderText="Medical Conditions" />
-                    <asp:TemplateField HeaderText="Update">
-                        <ItemTemplate>
-                            <asp:Button ID="UpdateButton" runat="server" CommandArgument='<%# Eval("patient_nhs_registration") %>' CommandName="_update" Text="Update" OnClick="UpdateButton_Click" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Delete">
-                        <ItemTemplate>
-                            <asp:Button ID="DeleteButton" runat="server" CommandArgument='<%# Eval("patient_nhs_registration") %>' CommandName="_delete" Text="Delete" OnClientClick="return confirm('Are you sure you want to delete this patient?');" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
                 </Columns>
                 <HeaderStyle CssClass="header"></HeaderStyle>
 
@@ -113,6 +103,19 @@
                 <RowStyle CssClass="rows"></RowStyle>
             </asp:GridView>
 
+        </div>
+        <hr />
+        <div class="row">
+            <div class="h4">Update and Delete Patients (NHS Number)</div>
+            <div class="col-md-3 mt-md-0 mt-3">
+                <asp:TextBox class="form-control" ID="SelectPatient" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-md-2 mt-md-0 mt-3">
+                <asp:Button class="btn btn-danger mt-3 align-middle" ID="UpdateButton" runat="server" Text="Update Patient" OnClick="UpdateButton_Click" />
+            </div>
+            <div class="col-md-2 mt-md-0 mt-3">
+                <asp:Button class="btn btn-danger mt-3 align-middle" ID="DeletePatientButton" runat="server" Text="Delete Patient" OnClick="DeletePatientButton_Click" />
+            </div>
         </div>
         <hr />
         <div class="h3">All Incidents</div>
@@ -138,19 +141,26 @@
             </asp:GridView>
         </div>
         <hr />
-        <div class="row">
-            <div class="col-md-12 mt-md-0 mt-5 text-center" style="margin-bottom: 10px;">
-                <asp:Button class="btn btn-danger mt-3 align-middle" ID="RefreshTables" runat="server" Text="Refresh Database" OnClick="RefreshTables_Click" />
+                <div class="row">
+            <div class="h4">Delete Incidents</div>
+            <div class="col-md-3 mt-md-0 mt-3">
+                <asp:TextBox class="form-control" ID="InciLookup" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-md-2 mt-md-0 mt-3">
+                <asp:Button class="btn btn-danger mt-3 align-middle" ID="DeleteIncidentButton" runat="server" Text="Delete Incident" OnClick="DeleteIncidentButton_Click" />
+            </div>
+            <div class="col-md-2 mt-md-0 mt-3">
+                <asp:Button class="btn btn-danger mt-3 align-middle" ID="RefreshTables" runat="server" Text="Refresh Databases" OnClick="RefreshTables_Click" />
             </div>
         </div>
     </div>
 
 
-        <div class="wrapper rounded bg-white" id="updateformsection" visible="false" runat="server">
+    <div class="wrapper rounded bg-white" id="updateformsection" visible="false" runat="server">
         <div class="form">
             <div class="h3">Edit Patient</div>
-            <hr/>
-        <div class="h3">Patient Information Form</div>
+            <hr />
+            <div class="h3">Patient Information Form</div>
             <div class="form">
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
@@ -165,7 +175,7 @@
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>NHS Registration Number</label>
-                        <asp:TextBox class="form-control" MaxLength="5" ID="EdNHSReg" runat="server"></asp:TextBox>
+                        <asp:TextBox class="form-control" MaxLength="5" ID="EdNHSReg" ReadOnly="true" runat="server"></asp:TextBox>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Address</label>
@@ -175,22 +185,22 @@
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Underlying Medical Conditions</label>
-                        <textarea id="EdMedicalCondition" runat="server" style="resize: none; width:500px; height: 100px;" cols="20" rows="2"></textarea>
+                        <textarea id="EdMedicalCondition" runat="server" style="resize: none; width: 500px; height: 100px;" cols="20" rows="2"></textarea>
                     </div>
                 </div>
-                <hr/>
+                <hr />
                 <div class="row">
                     <div class="col-md-4 mt-md-0 mt-3 text-center">
-                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="EdEdit" runat="server" Text="Edit Patient"/>
+                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="UpdateConfirm" runat="server" Text="Update Patient Records" OnClick="UpdateConfirm_Click" />
                     </div>
                     <div class="col-md-4 mt-md-0 mt-3 text-center">
-                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="EdClear" runat="server" Text="Clear all Form Inputs" />
+                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="UpdateClear" runat="server" Text="Clear all Form Inputs" />
                     </div>
                     <div class="col-md-4 mt-md-0 mt-3 text-center">
-                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="EdCancel" runat="server" Text="Cancel Edit" OnClick="EdCancel_Click" />
+                        <asp:Button class="btn btn-danger mt-3 align-middle" ID="UpdateCancel" runat="server" Text="Cancel Edit" OnClick="UpdateCancel_Click" />
                     </div>
                 </div>
-             </div>
+            </div>
 
         </div>
     </div>

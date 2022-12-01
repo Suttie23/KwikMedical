@@ -100,17 +100,156 @@ namespace Hospital
 
         }
 
-        protected void UpdateButton_Click(object sender, EventArgs e)
+          protected void UpdateButton_Click(object sender, EventArgs e)
+          {
+
+            populateUpdate();
+
+          }
+
+        private void populateUpdate()
         {
-            mainsection.Visible = false;
-            updateformsection.Visible = true;
+            int id;
+            if (int.TryParse(SelectPatient.Text, out id))
+            {
+
+            }
+            else
+            {
+                Response.Write("<script type=\"text/javascript\">alert('Field should contain a number');</script>");
+            }
+
+            try
+            {
+
+
+                var foundpatient = patLogic.GetPatientById(id);
+                {
+                    if (foundpatient != null)
+                    {
+                        EdFirstName.Text = foundpatient.patient_firstname.ToString();
+                        EdLastName.Text = foundpatient.patient_secondname.ToString();
+                        EdNHSReg.Text = foundpatient.patient_nhs_registration.ToString();
+                        EdAddress.Text = foundpatient.patient_address;
+                        EdMedicalCondition.InnerText = foundpatient.patient_medical_condition;
+
+                        mainsection.Visible = false;
+                        updateformsection.Visible = true;
+
+                    }
+                    else
+                    {
+                        Response.Write("<script type=\"text/javascript\">alert('Patient not Found!');</script>");
+                    }
+
+
+
+                }
+
+            }
+            catch (Exception)
+            {
+                Response.Write("<script type=\"text/javascript\">alert('An Error has occured');</script>");
+                throw;
+            }
         }
 
+        protected void DeleteIncidentButton_Click(object sender, EventArgs e)
+        {
+            int id;
+            if (int.TryParse(InciLookup.Text, out id))
+            {
 
-        protected void EdCancel_Click(object sender, EventArgs e)
+            }
+            else
+            {
+                Response.Write("<script type=\"text/javascript\">alert('Field should contain a number');</script>");
+            }
+
+            try
+            {
+
+                inciLogic.DeleteIncident(id);
+
+                Response.Write("<script type=\"text/javascript\">alert('Incident deleted');</script>");
+
+                InciGridBind();
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script type=\"text/javascript\">alert('An error has occured when deleting the incident');</script>");
+            }
+
+            InciLookup.Text = "";
+        }
+
+        protected void DeletePatientButton_Click(object sender, EventArgs e)
+        {
+
+            int id;
+            if (int.TryParse(SelectPatient.Text, out id))
+            {
+
+            }
+            else
+            {
+                Response.Write("<script type=\"text/javascript\">alert('Field should contain a number');</script>");
+            }
+
+            try
+            {
+
+                patLogic.DeletePatient(id);
+
+                Response.Write("<script type=\"text/javascript\">alert('Patient deleted');</script>");
+
+                PatientGridBind();
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script type=\"text/javascript\">alert('An error has occured when deleting the patient, please make sure all related incidents are deleted first!');</script>");
+            }
+
+            SelectPatient.Text = "";
+
+        }
+
+        protected void UpdateCancel_Click(object sender, EventArgs e)
         {
             mainsection.Visible = true;
             updateformsection.Visible = false;
+        }
+
+        protected void UpdateConfirm_Click(object sender, EventArgs e)
+        {
+            int id = 0;
+            id = int.Parse(EdNHSReg.Text);
+
+            try
+            {
+                var patient = patLogic.GetPatientById(id);
+                {
+                    patient.patient_firstname = EdFirstName.Text;
+                    patient.patient_secondname = EdLastName.Text;
+                    patient.patient_address = EdAddress.Text;
+                    patient.patient_medical_condition = EdMedicalCondition.InnerText;
+
+                };
+                patLogic.UpdatePatient(patient);
+
+                Response.Write("<script type=\"text/javascript\">alert('Updated patient');</script>");
+
+                mainsection.Visible = true;
+                updateformsection.Visible = false;
+                PatientGridBind();
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script type=\"text/javascript\">alert('An error has occured when updating the patient');</script>");
+            }
         }
 
     }

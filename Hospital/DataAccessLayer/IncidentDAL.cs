@@ -40,6 +40,14 @@ namespace DataAccessLayer
 
         }
 
+        public void DeleteIncident(int id)
+        {
+
+            var incident = db.Incidents.Find(id);
+            db.Incidents.Remove(incident);
+            db.SaveChanges();
+
+        }
 
     }
 }

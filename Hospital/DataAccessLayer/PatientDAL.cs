@@ -32,11 +32,19 @@ namespace DataAccessLayer
 
         }
 
-        public void DeletePatient(string id)
+        public void DeletePatient(int id)
         {
 
             var patient = db.Patients.Find(id);
             db.Patients.Remove(patient);
+            db.SaveChanges();
+
+        }
+
+        public void UpdatePatient(Patient patient)
+        {
+
+            db.Entry(patient).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
 
         }

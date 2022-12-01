@@ -33,6 +33,33 @@ namespace Hospital
         protected global::System.Web.UI.WebControls.GridView PatientGrid;
 
         /// <summary>
+        /// SelectPatient control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SelectPatient;
+
+        /// <summary>
+        /// UpdateButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UpdateButton;
+
+        /// <summary>
+        /// DeletePatientButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeletePatientButton;
+
+        /// <summary>
         /// AllGrid control.
         /// </summary>
         /// <remarks>
@@ -40,6 +67,24 @@ namespace Hospital
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView AllGrid;
+
+        /// <summary>
+        /// InciLookup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InciLookup;
+
+        /// <summary>
+        /// DeleteIncidentButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteIncidentButton;
 
         /// <summary>
         /// RefreshTables control.
@@ -105,30 +150,30 @@ namespace Hospital
         protected global::System.Web.UI.HtmlControls.HtmlTextArea EdMedicalCondition;
 
         /// <summary>
-        /// EdEdit control.
+        /// UpdateConfirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EdEdit;
+        protected global::System.Web.UI.WebControls.Button UpdateConfirm;
 
         /// <summary>
-        /// EdClear control.
+        /// UpdateClear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EdClear;
+        protected global::System.Web.UI.WebControls.Button UpdateClear;
 
         /// <summary>
-        /// EdCancel control.
+        /// UpdateCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EdCancel;
+        protected global::System.Web.UI.WebControls.Button UpdateCancel;
     }
 }
