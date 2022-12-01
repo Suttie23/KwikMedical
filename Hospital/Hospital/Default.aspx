@@ -82,6 +82,7 @@
         }
     </style>
 
+    <!--Main UI Elements Start-->
     <div id="mainsection" visible="true" runat="server">
         <div class="h1">KwikMedical Hospital Patient Database</div>
         <div class="row">
@@ -141,7 +142,7 @@
             </asp:GridView>
         </div>
         <hr />
-                <div class="row">
+        <div class="row">
             <div class="h4">Delete Incidents</div>
             <div class="col-md-3 mt-md-0 mt-3">
                 <asp:TextBox class="form-control" ID="InciLookup" runat="server"></asp:TextBox>
@@ -154,8 +155,9 @@
             </div>
         </div>
     </div>
+    <!--Main UI Elements End-->
 
-
+    <!--Update Patient UI Start-->
     <div class="wrapper rounded bg-white" id="updateformsection" visible="false" runat="server">
         <div class="form">
             <div class="h3">Edit Patient</div>
@@ -204,5 +206,6 @@
 
         </div>
     </div>
+    <!--Update Patient UI End-->
 
 </asp:Content>

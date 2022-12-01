@@ -14,6 +14,7 @@ namespace HQ_Operator
     public partial class _Default : Page
     {
 
+        // Creating logic objects
         PatientLogic patLogic = new PatientLogic();
         IncidentLogic inciLogic = new IncidentLogic();
 
@@ -45,61 +46,73 @@ namespace HQ_Operator
 
         }
 
+        // Insert Patient information (Called by HQ Submit)
         private void InsertPat()
         {
             try
             {
+                // Create new patient object
                 var patient = new DataAccessLayer.Models.Patient();
                 {
+                    // populate patient fields
                     patient.patient_nhs_registration = int.Parse(HQNHSReg.Text);
                     patient.patient_firstname = HQFirstName.Text;
                     patient.patient_secondname = HQLastName.Text;
                     patient.patient_address = HQAddress.Text;
                     patient.patient_medical_condition = HQMedicalCondition.InnerText;
                 }
+                // Insert patient into database
                 patLogic.CreatePatient(patient);
 
+                //Success emssage
                 Response.Write("<script type=\"text/javascript\">alert('Patient has been submitted');</script>"); ;
             }
             catch (Exception ex)
             {
+                // Error Message
                 Response.Write("<script type=\"text/javascript\">alert('There was an error submitting the patient, please try again');</script>");
             }
 
         }
 
+        // Find Patient (Called by Lookup)
         private void FindPatient()
         {
 
-
+            // Check if id is valid
             int id;
             if (int.TryParse(HQLookup.Text, out id))
             {
-
+                // continue
             }
             else
             {
+                //Error message
                 Response.Write("<script type=\"text/javascript\">alert('Field should contain a number');</script>");
             }
 
             try
             {
-
+                // Get patient by ID
                 var foundpatient = patLogic.GetPatientById(id);
                 {
+                    // If patient exists
                     if (foundpatient != null)
                     {
+                        // Populate fields
                         HQFirstName.Text = foundpatient.patient_firstname;
                         HQLastName.Text = foundpatient.patient_secondname;
                         HQNHSReg.Text = foundpatient.patient_nhs_registration.ToString();
                         HQAddress.Text = foundpatient.patient_address;
                         HQMedicalCondition.InnerText = foundpatient.patient_medical_condition;
 
+                        // Success Message
                         Response.Write("<script type=\"text/javascript\">alert('Patient Found!');</script>");
 
                     }
                     else
                     {
+                        // Error Message
                         Response.Write("<script type=\"text/javascript\">alert('Patient not Found!');</script>");
                     }
 
@@ -108,6 +121,7 @@ namespace HQ_Operator
             }
             catch (Exception)
             {
+                // Exception Error Message
                 Response.Write("<script type=\"text/javascript\">alert('An Error has ocurred');</script>");
                 throw;
             }
@@ -115,6 +129,7 @@ namespace HQ_Operator
 
         }
 
+        // Clear Input Form
         protected void HQClearForm_Click(object sender, EventArgs e)
         {
             HQLookup.Text = "";
@@ -128,20 +143,21 @@ namespace HQ_Operator
 
         }
 
+        // Request Ambulance
         protected void HQRequestAmbulance1_Click(object sender, EventArgs e)
         {
 
-
+            // Show new elements
             HQRequestAmbulance1.Visible = false;
             HQRequestAmbulance2.Visible = true;
-
             HospitalLabel.Visible = true;
             HospitalList.Visible = true;
 
+            // Set Region
             string region = HQLocation.Text;
 
 
-
+            // Check region and display hospitals based on region
             switch (region)
             {
                 case "City of Edinburgh":
@@ -184,6 +200,7 @@ namespace HQ_Operator
 
         }
 
+        // Submit Ambulance Request button
         protected void HQRequestAmbulance2_Click(object sender, EventArgs e)
         {
 
@@ -192,6 +209,7 @@ namespace HQ_Operator
                 InsertInci();
             }
 
+            // Show and hide UI elements
             HQRequestAmbulance1.Visible = true;
             HQRequestAmbulance2.Visible = false;
             HospitalLabel.Visible = false;
@@ -220,24 +238,30 @@ namespace HQ_Operator
 
         }
 
+        // Create partial incident report
         private void InsertInci()
         {
 
             try
             {
+                // Create incident object
                 var incident = new DataAccessLayer.Models.Incident();
                 {
+                    // Assign date and time now & populate fields
                     incident.incident_reported_time = DateTime.Now;
                     incident.patient_nhs_registration = int.Parse(HQNHSReg.Text);
                     incident.incident_location = HQLocation.Text;
                     incident.assigned_hospital = int.Parse(HospitalList.SelectedValue);
                 }
+                // Insert incident to database
                 inciLogic.CreateIncident(incident);
 
+                // Success message
                 Response.Write("<script type=\"text/javascript\">alert('Incident Report Sent to Ambulance');</script>");
             }
             catch (Exception ex)
             {
+                // Exception Error Message
                 Response.Write("<script type=\"text/javascript\">alert('Database Error - Please enter the patient into the system first. If the issue persists, contact support');</script>");
             }
 
