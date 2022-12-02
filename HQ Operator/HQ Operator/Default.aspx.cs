@@ -132,6 +132,12 @@ namespace HQ_Operator
         // Clear Input Form
         protected void HQClearForm_Click(object sender, EventArgs e)
         {
+            ClearAll();
+
+        }
+
+        private void ClearAll()
+        {
             HQLookup.Text = "";
             HQFirstName.Text = ""; ;
             HQLastName.Text = "";
@@ -139,8 +145,6 @@ namespace HQ_Operator
             HQAddress.Text = "";
             HQLocation.Text = "Not Specified";
             HQMedicalCondition.InnerText = "";
-            SubmitStatus.Text = "";
-
         }
 
         // Request Ambulance
@@ -255,6 +259,10 @@ namespace HQ_Operator
                 }
                 // Insert incident to database
                 inciLogic.CreateIncident(incident);
+
+                submittedIncident.Visible = true;
+                inciNumberDebug.Text = "Incident generated with number: " +  incident.incident_number.ToString();
+                ClearAll();
 
                 // Success message
                 Response.Write("<script type=\"text/javascript\">alert('Incident Report Sent to Ambulance');</script>");

@@ -99,6 +99,12 @@
                         <asp:Button class="btn btn-danger mt-3 align-middle" Visible="false" ID="HQRequestAmbulance2" runat="server" Text="Submit Ambulance Request" OnClick="HQRequestAmbulance2_Click" />
                     </div>
                 </div>
+                <div class="row" id="submittedIncident" runat="server" visible="false">
+                    <hr/>
+                    <div class="col-md-12 mt-md-0 mt-3 text-center">
+                        <asp:Label ID="inciNumberDebug" runat="server" Text=""></asp:Label>
+                    </div>
+                </div>
              </div>
 
         </div>
